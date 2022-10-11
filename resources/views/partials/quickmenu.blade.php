@@ -3,6 +3,9 @@
 	<label for="menu_open" class="menu-open-button ">
 		<span class="app-shortcut-icon d-block"></span>
 	</label>
+	<a href="javascript:void(0)" title="Mulai Tour" data-toggle="tooltip" class="menu-item btn " data-placement="left" id="startTour" role="button" type="button">
+		<i class="fal fa-plane-departure"></i>
+	</a>
 	<a href="#" class="menu-item btn" data-toggle="tooltip" data-placement="left" title="Scroll Top">
 		<i class="fal fa-arrow-up"></i>
 	</a>

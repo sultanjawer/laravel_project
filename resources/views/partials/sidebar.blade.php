@@ -2,8 +2,8 @@
 <aside class="page-sidebar">
     <div class="page-logo">
         <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
-            <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
-            <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
+            <img src="/img/logo.png" alt="Project WebApp" aria-roledescription="logo">
+            <span class="page-logo-text mr-1">Project WebApp</span>
             <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
             <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
         </a>
@@ -19,16 +19,16 @@
             </div>
         </div>
         <div class="info-card">
-            <img src="img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
+            <img src="/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Administrator">
             <div class="info-card-text">
                 <a href="#" class="d-flex align-items-center text-white">
                     <span class="text-truncate text-truncate-sm d-inline-block">
-                        Dr. Codex Lantern
+                        Administrator
                     </span>
                 </a>
-                <span class="d-inline-block text-truncate text-truncate-sm">Toronto, Canada</span>
+                <span class="d-inline-block text-truncate text-truncate-sm">Bogor, Indonesia</span>
             </div>
-            <img src="img/card-backgrounds/cover-2-lg.png" class="cover" alt="cover">
+            <img src="/img/card-backgrounds/cover-2-lg.png" class="cover" alt="cover">
             <a href="#" onclick="return false;" class="pull-trigger-btn" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar" data-focus="nav_filter_input">
                 <i class="fal fa-angle-down"></i>
             </a>
@@ -37,11 +37,36 @@
 						TIP: The menu items are not auto translated. You must have a residing lang file associated with the menu saved inside dist/media/data with reference to each 'data-i18n' attribute.
 						-->
         <ul id="js-nav-menu" class="nav-menu">
-            <li class="active">
-                <a href="/home" title="Beranda" data-filter-tags="beranda home">
+            <li class="{{ request()->is('beranda') ? 'active' : '' }}">
+                <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
                     <i class="fal fa-home"></i>
                     <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
                 </a>
+            </li>
+            <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
+                <a href="/dashboard" title="Dashboard" data-filter-tags="dashboard analytic monitoring">
+                    <i class="fal fa-analytics"></i>
+                    <span class="nav-link-text" data-i18n="nav.dashboard">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-title">Sub Applications</li>
+            <li class="{{ request()->is('asset*') ? 'active' : '' }}">
+                <a href="javascript:void(0);" title="Assets Management" data-filter-tags="asset management">
+                    <i class="fal fa-inventory"></i>
+                    <span class="nav-link-text" data-i18n="nav.asset_management">Assets Management</span>
+                </a>
+                <ul>
+                    <li class="{{ request()->is('asset') ? 'active' : '' }}">
+                        <a href="/asset" title="Asset List" data-filter-tags="assets list">
+                            <span class="nav-link-text" data-i18n="nav.assets_list">Assets List</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('/asset/create') ? 'active' : '' }}">
+                        <a href="/asset/create" title="New Asset" data-filter-tags="create new assets">
+                            <span class="nav-link-text" data-i18n="nav.create_assets">New Asset</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-title">Navigation Title</li>
             <li>
@@ -71,27 +96,6 @@
                         <a href="javascript:void(0);" title="Disabled item" data-filter-tags="utilities disabled item">
                             <span class="nav-link-text" data-i18n="nav.utilities_disabled_item">Disabled item</span>
                         </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- Example of open and active states -->
-            <li class="active open">
-                <a href="#" title="Category" data-filter-tags="category">
-                    <i class="fal fa-plus"></i>
-                    <span class="nav-link-text" data-i18n="nav.category">Open Item</span>
-                </a>
-                <ul>
-                    <li class="active open">
-                        <a href="javascript:void(0);" title="Menu child" data-filter-tags="utilities menu child">
-                            <span class="nav-link-text" data-i18n="nav.utilities_menu_child">Open Sub-category</span>
-                        </a>
-                        <ul>
-                            <li class="active">
-                                <a href="javascript:void(0);" title="Sublevel Item" data-filter-tags="utilities menu child sublevel item">
-                                    <span class="nav-link-text" data-i18n="nav.utilities_menu_child_sublevel_item">Active Item</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
             </li>

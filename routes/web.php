@@ -21,6 +21,12 @@ Route::get('/', function () {
 //Route::view('/landing', view: 'admin.landing.index');
 Route::view('/logout', view: 'index');
 Route::get('beranda', [\App\Http\Controllers\LandingController::class, 'index'])->name(name: 'beranda');
+Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name(name: 'dashboard');
+
+Route::get('asset', [\App\Http\Controllers\AssetController::class, 'index'])->name(name: 'asset');
+
+Route::get('asset/create', [\App\Http\Controllers\AssetController::class, 'create'])->name(name: 'create');
+
 //this one landing', 'LandingController@index'
 //Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
 //    Route::get('/', 'LandingController@index')->name('landing');

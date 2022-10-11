@@ -2,9 +2,10 @@
 @section ('style')
 @endsection
 @section('content')
+<div class="" data-title="System Alert" data-intro="Ini adalah Panel yang berisi informasi atau pemberitahuan penting untuk Anda." data-step="1">@include('partials.sysalert')</div>
 <div class="row">
     <div class="col-xl-6">
-        <div id="panel-1" class="panel">
+        <div id="panel-1" class="panel" data-title="Panel Data" data-intro="Panel ini berisi data-data" data-step="2">
             <div class="panel-hdr">
                 <h2>
                     Panel <span class="fw-300"><i>Title</i></span>
@@ -29,7 +30,7 @@
                 <h2>
                     Panel <span class="fw-300"><i>Title</i></span>
                 </h2>
-                <div class="panel-toolbar">
+                <div class="panel-toolbar" data-title="Toolbar" data-intro="Berfungsi untuk menampilkan, menyembunyikan/menggulung, dan panel layar penuh." data-step="3">
                     @include('partials.globaltoolbar')
                 </div>
             </div>

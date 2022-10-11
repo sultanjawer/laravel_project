@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        Newer Better - Login Simethris 2022
+        {{env('APP_NAME')}} | Login
     </title>
     <meta name="description" content="Login">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,13 +37,21 @@
     <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-brands.css') }}">
     <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-regular.css') }}">
     <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-solid.css') }}">
+
+    <!-- Intro.js -->
+    <link rel="stylesheet" media="screen, print" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.css">
+    <link rel="stylesheet" media="screen, print" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.min.css">
+    <link rel="stylesheet" media="screen, print" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.min.css.map">
+
+
+
+
+
+
+
 </head>
 <!-- Apa yang ingin dicapai pada halaman ini
-		Pengguna dapat mengakses ke dalam aplikasi dengan menggunakan kredensial yang telah dimiliki pada aplikasi RIPH sehingga pengguna tidak perlu melakukan registrasi.
-		Login dapat menggunakan Token atau lainnya untuk proses otentikasi akun dan user session.
-		Pengguna memilih Role akses dimaksudkan untuk memudahkan dalam proses SSO. Sehingga, saat Role Kementerian dipilih, sistem tidak perlu memeriksa SSO. begitu pula sebaliknya dengan Role Importir.
 		
-		Apa yang ditampilkan hanyalah contoh, proses dan metode dapat menggunakan teknologi lain yang sesuai, relevan dan tepat.
 	-->
 
 <body>
@@ -53,16 +61,16 @@
                 <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
                     <div class="d-flex align-items-center container p-0">
                         <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9 border-0">
-                            <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
-                                <img src="{{ asset('img/favicon/favicon.png') }}" alt="simethris" aria-roledescription="logo">
-                                <span class="page-logo-text mr-1 hidden-sm-down"><img src="{{ asset('img/logo-icon.png') }}" alt="simethris" aria-roledescription="logo" style="width:150px; height:auto;"></span>
+                            <a href=" javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
+                                <img src="{{ asset('img/logo.png') }}" alt="simethris" aria-roledescription="logo">
+                                <span class="page-logo-text mr-1 hidden-sm-down">Project WebApp</span>
                                 <span class="page-logo-text mr-1 d-sm-block d-md-none">Simethris MobileApp</span>
                             </a>
                         </div>
+                        <button role="button" class="btn btn-sm btn-warning" href="javascript:void(0)" onclick="introJs().start();">Mulai Tur</button>
                         <a class="dropdown c-header-nav ml-auto">
                             <a class="c-header-nav-item dropdown d-md-down-none">
-
-                                <a class="text-white c-header-nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="true">
+                                <a class="text-white c-header-nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="true" data-title="Pilih Bahasa!" data-intro="Pilih Bahasa pengantar dalam aplikasi" data-step="1">
                                     Bahasa (ID)
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
@@ -80,7 +88,7 @@
                                 <h2 class="fs-xxl fw-500 mt-4 text-white">
                                     <small class="h3 fw-300 mt-3 mb-5 text-white opacity-100">
                                         Bagi Pemegang RIPH yang akan mengakses aplikasi ini, Anda harus memiliki akun pada Aplikasi RIPH Online terlebih dahulu.
-                                        <p>Belum memiliki akun? silahkan melakukan pendaftaran <a href="http://riph.pertanian.go.id/" class="fw-700 text-white">di sini.</a></p>
+                                        <p>Belum memiliki akun? silahkan melakukan pendaftaran <a href="http://riph.pertanian.go.id/" class="fw-700 text-white" data-title="Pendaftaran RIPH!" data-intro="Jika Anda belum memiliki akun di aplikasi RIPH, Klik untuk mengunjungi halaman aplikasi RIPH dan mendaftarkan akun Anda." data-step="7">di sini.</a></p>
                                     </small>
                                 </h2>
                                 <a href="#" class="fs-lg fw-500 text-white opacity-70">Learn more &gt;&gt;</a>
@@ -116,7 +124,7 @@
                                     <form id="js-login" novalidate="" action="">
                                         <div class="form-group">
                                             <label class="form-label" for="roleaccess">User Role</label>
-                                            <div class="input-group" data-toggle="tooltip" title data-original-title="Role Anda di Aplikasi ini">
+                                            <div class="input-group" data-toggle="tooltip" title data-original-title="Role Anda di Aplikasi ini" data-title="Pilih Role Pengguna!" data-intro="Pilih Role Pengguna Anda" data-step="2">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">
                                                         <span class="fal fa-user-lock"></span>
@@ -135,7 +143,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="username">Username</label>
-                                            <div class="input-group" data-toggle="tooltip" title data-original-title="Gunakan akun yang sama dengan akun Anda di aplikasi RIPH">
+                                            <div class="input-group" data-toggle="tooltip" title data-original-title="Gunakan akun yang sama dengan akun Anda di aplikasi RIPH" data-title="Nama Pengguna (username)" data-intro="isi dengan nama pengguna yang Anda miliki di aplikasi RIPH" data-step="3">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">
                                                         <span class="fal fa-user"></span>
@@ -150,7 +158,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="password">Password</label>
-                                            <div class="input-group bg-white shadow-inset-2" data-toggle="tooltip" title data-original-title="Gunakan katakunci yang terhubung dengan akun Anda di aplikasi RIPH">
+                                            <div class="input-group bg-white shadow-inset-2" data-toggle="tooltip" title data-original-title="Gunakan katakunci yang terhubung dengan akun Anda di aplikasi RIPH" data-title="Password" data-intro="Isi dengan katakunci (password) yang terhubung dengan akun Anda di aplikasi RIPH" data-step="4">
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">
                                                         <span class="fal fa-key"></span>
@@ -168,14 +176,14 @@
                                             </div>
                                             <div class="help-block text-muted">kata kunci untuk meng-akses aplikasi ini</div>
                                         </div>
-                                        <div class="form-group text-left">
+                                        <div class="form-group text-left" data-title="Ingat Saya" data-intro="Centang jika Anda ingin langsung masuk jika login berhasil" data-step="5">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="rememberme">
                                                 <label class="custom-control-label" for="rememberme"> Ingat Saya</label>
                                             </div>
                                         </div>
                                         <div class="row no-gutters">
-                                            <div class="col-lg-6 pl-lg-1 my-2">
+                                            <div class="col-lg-6 pl-lg-1 my-2" data-title="Tombol masuk" data-intro="Klik tombol ini untuk mengakses aplikasi jika seluruh kolom telah terisi" data-step="6">
                                                 <a id="js-login-btn" type="submit" role="button" class="btn btn-danger btn-block btn-sm" href="/beranda">Masuk</a>
                                             </div>
                                             <div class="col-lg-6 pl-lg-1 my-2">
@@ -197,7 +205,14 @@
 
     <script src="{{ asset('js/vendors.bundle.js') }}"></script>
     <script src="{{ asset('js/app.bundle.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js.map"></script>
 
+
+    <script>
+
+    </script>
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');

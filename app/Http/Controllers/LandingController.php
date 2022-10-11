@@ -11,12 +11,15 @@ class LandingController extends Controller
 {
     public function index()
     {
-        $module = 'Module Title';
-        $pagetitle = 'Page Title';
-        $subtitle = 'Sub Title';
-        $sysalert = 'Perhatian';
-        $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
-        $breadcrumbs = ['Simethris', 'Module Title', 'Page Title']; //add as much array item as needed
-        return view('admin.landing.index', compact('module', 'pagetitle', 'subtitle', 'sysalert', 'alertcontent'), ['breadcrumb' => $breadcrumbs]);
+        $pagedata = array(
+            'modules' => 'Module Title',
+            'pagetitles' => 'Page Title',
+            'subtitles' => 'Sub Title',
+            'emphs' => 'Short brief for this page',
+            'alerttitle' => 'Alert/information Title', //make it uppercase
+            'alertcontent' => 'Alert/information should appear in here.',
+        );
+        $breadcrumbs = ['App Names', 'Module Title', 'Page Title']; //add as much array item as needed
+        return view('admin.landing.index', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
     }
 }

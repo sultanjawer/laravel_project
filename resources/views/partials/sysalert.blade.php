@@ -9,12 +9,9 @@
         </div>
         <div class="d-flex flex-fill">
             <div class="flex-fill">
-                <span class="h5">{{$sysalert}}</span>
+                <span class="h5">{{ $pagedata['alerttitle'] }}</span>
                 <p>
-                    {{$alertcontent}}
-                </p>
-                <p class="m-0">
-                    Follow a slogal with a useful link or call to action <a href="#" target="_blank">Call to action >></a>
+                    {{ $pagedata['alertcontent'] }}
                 </p>
             </div>
         </div>
