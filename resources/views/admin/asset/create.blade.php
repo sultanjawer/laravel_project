@@ -11,39 +11,56 @@
                     Panel <span class="fw-300"><i>Title</i></span>
                 </h2>
                 <div class="panel-toolbar">
-                    <a class="btn btn-xs btn-primary mr-1 ml-1" href="/asset/create"><i class="fal fa-plus mr-1"></i>New Asset</a>
+                    <a class="btn btn-xs btn-primary mr-1 ml-1" href="/asset/create"><i class="fal fa-save mr-1"></i>Save</a>
+                    @include('partials.globaltoolbar')
                 </div>
             </div>
             <div class="panel-container show">
                 <div class="panel-content">
-                    <table id="inventoryList" class="table tbl-hover tbl-striped tbl-sm ">
-                        <thead>
-                            <tr>
-                                <th>Item</th>
-                                <th>Category</th>
-                                <th>Condition</th>
-                                <th>Location</th>
-                                <th>Owner</th>
-                                <th>Accuired Date</th>
-                                <th>Purchase Price</th>
-                                <th>Current Value</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label class="form-label" for="itemName">Prepend</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Abc</span>
+                                    </div>
+                                    <input type="text" id="itemName" class="form-control" placeholder="Name of the item" aria-label="Username" aria-describedby="itemName">
+                                </div>
+                                <span class="help-block">Some help content goes here</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="itemCategory">Prepend</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Abc</span>
+                                    </div>
+                                    <select type="text" id="itemCategory" class="form-control" placeholder="Category" aria-label="Item Category" aria-describedby="itemCategory">
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Some help content goes here</span>
+                            </div>
+                        </div>
+                        <div class="col-md-5 border-left">
+                            <div class="mb-3 col-12">
+                                <img src="/img/card-backgrounds/cover-1-lg.png" width="100%" height="100%" class="mb-2">
+                                <a class="btn btn-block btn-sm btn-primary mr-1 ml-1" href="javascript:void(0)"><i class="fal fa-save mr-1"></i>Save/Change Picture</a>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="itemName">Prepend</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Abc</span>
+                                    </div>
+                                    <textarea type="text" id="itemName" class="form-control" placeholder="Name of the item" aria-label="Username" aria-describedby="itemName" rows="3"></textarea>
+                                </div>
+                                <span class="help-block">Some help content goes here</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
