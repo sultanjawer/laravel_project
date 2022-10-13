@@ -12,7 +12,7 @@ class LandingController extends Controller
     public function index()
     {
         $pagedata = array(
-            'modules' => 'Module Title',
+            'controller' => 'Home',
             'pagetitles' => 'Page Title',
             'subtitles' => 'Sub Title',
             'emphs' => 'Short brief for this page',

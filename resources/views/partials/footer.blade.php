@@ -7,7 +7,7 @@
 			<li><a href="/about" class="text-secondary fw-700">About</a></li>
 			<li class="pl-3"><a href="/license" class="text-secondary fw-700">License</a></li>
 			<li class="pl-3"><a href="/documentation" class="text-secondary fw-700">Documentation</a></li>
-			<li class="pl-3 fs-xl"><a href="rebrandz.xyz" class="text-secondary" target="_blank"><i class="fal fa-question-circle" aria-hidden="true"></i></a></li>
+			<li class="pl-3 fs-xl"><a class="btn btn-xs btn-primary mr-1 ml-1" href="javascript:void()" id="startTour">Tour Singkat</a></li>
 		</ul>
 	</div>
 </footer>

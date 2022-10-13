@@ -13,7 +13,7 @@ class AssetController extends Controller
     public function index()
     {
         $pagedata = array(
-            'modules' => 'Assets Management',
+            'controller' => 'Assets Management',
             'pagetitles' => 'Assets',
             'subtitles' => 'List',
             'emphs' => 'Short brief for this page',
@@ -29,7 +29,7 @@ class AssetController extends Controller
     public function add()
     {
         $pagedata = array(
-            'modules' => 'Assets Management',
+            'controller' => 'Assets Management',
             'pagetitles' => 'Create New',
             'subtitles' => 'Asset',
             'emphs' => 'Short brief for this page',
@@ -58,7 +58,7 @@ class AssetController extends Controller
     {
         $assets = Assets::find($id);
         $pagedata = array(
-            'modules' => 'Assets Management',
+            'controller' => 'Assets Management',
             'pagetitles' => 'Edit',
             'subtitles' => 'Asset',
             'emphs' => 'Short brief for this page',
@@ -84,6 +84,9 @@ class AssetController extends Controller
         $assets->category = $request->category;
         $assets->condition = $request->condition;
         $assets->location = $request->location;
+        $assets->img = $request->img;
+        $assets->desc = $request->desc;
+        $assets->comments = $request->comments;
         $assets->save();
         return redirect('/asset');
     }

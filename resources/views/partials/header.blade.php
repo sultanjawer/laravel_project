@@ -632,7 +632,7 @@
 					</div>
 				</div>
 				<div class="dropdown-divider m-0"></div>
-				<a class="dropdown-item fw-500 pt-3 pb-3" href="page_login.html">
+				<a class="dropdown-item fw-500 pt-3 pb-3" href="/logout">
 					<span data-i18n="drpdwn.page-logout">Logout</span>
 					<span class="float-right fw-n">&commat;admin</span>
 				</a>

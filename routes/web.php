@@ -12,23 +12,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Login and logout
 Route::get('/', function () {
     return view('index');
 });
-
-//Route::view('/', view: 'index');
-//Route::view('/landing', view: 'admin.landing.index');
 Route::view('/logout', view: 'index');
-Route::get('beranda', [\App\Http\Controllers\LandingController::class, 'index'])->name(name: 'beranda');
-Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name(name: 'dashboard');
+
+//landing and dashboard
+Route::get('beranda', '\App\Http\Controllers\LandingController@index')->name('beranda');
+Route::get('dashboard', '\App\Http\Controllers\DashboardController@index')->name('dashboard');
 
 //Assets Management
-Route::get('asset', [\App\Http\Controllers\AssetController::class, 'index'])->name(name: 'asset');
-Route::get('asset/add', [\App\Http\Controllers\AssetController::class, 'add'])->name(name: 'add');
-Route::post('asset/store', [\App\Http\Controllers\AssetController::class, 'store'])->name(name: 'store');
-Route::get('asset/edit/{id}', [\App\Http\Controllers\AssetController::class, 'edit'])->name(name: 'edit');
-Route::put('asset/update/{id}', [\App\Http\Controllers\AssetController::class, 'update'])->name(name: 'update');
+Route::get('asset', 'App\Http\Controllers\AssetController@index')->name('asset');
+Route::get('asset/add', 'App\Http\Controllers\AssetController@add')->name('add');
+Route::post('asset/store', 'App\Http\Controllers\AssetController@store')->name('store');
+Route::get('asset/edit/{id}', 'App\Http\Controllers\AssetController@edit')->name('edit');
+Route::put('asset/update/{id}', 'App\Http\Controllers\AssetController@update')->name('update');
 
 
 //this one landing', 'LandingController@index'

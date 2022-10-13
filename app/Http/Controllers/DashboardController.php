@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         $pagedata = array(
-            'modules' => 'Module Title',
+            'controller' => 'Dashboard',
             'pagetitles' => 'Page Title',
             'subtitles' => 'Sub Title',
             'emphs' => 'Short brief for this page',
