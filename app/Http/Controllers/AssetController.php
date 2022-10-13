@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
-use App\Models\Belanja;
+use App\Models\Assets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class AssetController extends Controller
 {
@@ -20,15 +21,16 @@ class AssetController extends Controller
             'alertcontent' => 'Alert/information should appear in here.',
         );
         $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
-        $breadcrumbs = ['App Name', 'Asset', 'Assets List']; //add as much array item as needed
-        return view('admin.asset.index', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
+        $breadcrumbs = ['App Name', 'Asset', 'Assets List']; //add as much array item as needed;
+        $assets = Assets::all();
+        return view('admin.asset.index', compact('pagedata', 'assets'), ['breadcrumb' => $breadcrumbs]);
     }
 
-    public function create()
+    public function add()
     {
         $pagedata = array(
             'modules' => 'Assets Management',
-            'pagetitles' => 'New',
+            'pagetitles' => 'Create New',
             'subtitles' => 'Asset',
             'emphs' => 'Short brief for this page',
             'alerttitle' => 'Alert/information Title', //make it uppercase
@@ -36,6 +38,53 @@ class AssetController extends Controller
         );
         $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
         $breadcrumbs = ['App Name', 'Asset', 'Create']; //add as much array item as needed
-        return view('admin.asset.create', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
+        return view('admin.asset.add', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
+    }
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'inventnum' => 'required',
+            'item' => 'required',
+            'category' => 'required'
+        ]);
+        Assets::create([
+            'inventnum' => $request->inventnum,
+            'item' => $request->item,
+            'category' => $request->category
+        ]);
+        return redirect('/asset');
+    }
+    public function edit($id)
+    {
+        $assets = Assets::find($id);
+        $pagedata = array(
+            'modules' => 'Assets Management',
+            'pagetitles' => 'Edit',
+            'subtitles' => 'Asset',
+            'emphs' => 'Short brief for this page',
+            'alerttitle' => 'Alert/information Title', //make it uppercase
+            'alertcontent' => 'Alert/information should appear in here.',
+        );
+        $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
+        $breadcrumbs = ['App Name', 'Asset', 'Create']; //add as much array item as needed
+        return view('admin.asset.edit', compact('pagedata', 'assets'), ['breadcrumb' => $breadcrumbs]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $this->validate($request, [
+            'inventnum' => 'required',
+            'item' => 'required',
+            'category' => 'required'
+        ]);
+
+        $assets = Assets::find($id);
+        $assets->inventnum = $request->inventnum;
+        $assets->item = $request->item;
+        $assets->category = $request->category;
+        $assets->condition = $request->condition;
+        $assets->location = $request->location;
+        $assets->save();
+        return redirect('/asset');
     }
 }

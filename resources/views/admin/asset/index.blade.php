@@ -11,7 +11,7 @@
                     Panel <span class="fw-300"><i>Title</i></span>
                 </h2>
                 <div class="panel-toolbar">
-                    <a class="btn btn-xs btn-primary mr-1 ml-1" href="/asset/create"><i class="fal fa-plus mr-1"></i>New Asset</a>
+                    <a class="btn btn-xs btn-primary mr-1 ml-1" href="/asset/add"><i class="fal fa-plus mr-1"></i>New Asset</a>
                 </div>
             </div>
             <div class="panel-container show">
@@ -19,6 +19,7 @@
                     <table id="inventoryList" class="table tbl-hover tbl-striped tbl-sm ">
                         <thead>
                             <tr>
+                                <th>Asset #</th>
                                 <th>Item</th>
                                 <th>Category</th>
                                 <th>Condition</th>
@@ -31,17 +32,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($assets as $myasset)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td> {{$myasset->inventnum}} </td>
+                                <td> {{$myasset->item}} </td>
+                                <td> {{$myasset->category}} </td>
+                                <td> {{$myasset->condition}} </td>
+                                <td> {{$myasset->location}} </td>
+                                <td> {{$myasset->owner}} </td>
+                                <td> {{$myasset->accuired}} </td>
+                                <td> {{$myasset->purchase}} </td>
+                                <td> {{$myasset->cval}} </td>
+                                <td>
+                                    <a href="/asset/edit/{{$myasset->id}} " class="btn btn-xs btn-primary" type="button">Edit</a>
+                                    <a href="/asset/delete/{{$myasset->id}} " class="btn btn-xs btn-danger" type="button">Hapus</a>
+                                </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -52,18 +59,13 @@
 @endsection
 <!-- @parent -->
 <!-- start script for this page -->
-
 @section('scripts')
-
 <script src="{{ asset('js/datagrid/datatables/datatables.bundle.js') }}"></script>
 <script src="{{ asset('js/datagrid/datatables/datatables.export.js') }}"></script>
 <script>
     $(document).ready(function() {
-
         // initialize datatable
         $('#inventoryList').dataTable({
-            processing: true,
-            serverside: true,
             pagingType: 'full_numbers',
             responsive: true,
             lengthChange: false,
@@ -133,12 +135,6 @@
                     titleAttr: 'Print Table',
                     className: 'btn-outline-primary btn-xs'
                 },
-                {
-                    extend: 'setting',
-                    text: 'New Asset',
-                    titleAttr: 'New Assets',
-                    className: 'btn-outline-primary btn-xs'
-                }
             ]
         });
 

@@ -23,9 +23,13 @@ Route::view('/logout', view: 'index');
 Route::get('beranda', [\App\Http\Controllers\LandingController::class, 'index'])->name(name: 'beranda');
 Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name(name: 'dashboard');
 
+//Assets Management
 Route::get('asset', [\App\Http\Controllers\AssetController::class, 'index'])->name(name: 'asset');
+Route::get('asset/add', [\App\Http\Controllers\AssetController::class, 'add'])->name(name: 'add');
+Route::post('asset/store', [\App\Http\Controllers\AssetController::class, 'store'])->name(name: 'store');
+Route::get('asset/edit/{id}', [\App\Http\Controllers\AssetController::class, 'edit'])->name(name: 'edit');
+Route::put('asset/update/{id}', [\App\Http\Controllers\AssetController::class, 'update'])->name(name: 'update');
 
-Route::get('asset/create', [\App\Http\Controllers\AssetController::class, 'create'])->name(name: 'create');
 
 //this one landing', 'LandingController@index'
 //Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {

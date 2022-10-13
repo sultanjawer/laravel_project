@@ -61,9 +61,9 @@
                             <span class="nav-link-text" data-i18n="nav.assets_list">Assets List</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('/asset/create') ? 'active' : '' }}">
-                        <a href="/asset/create" title="New Asset" data-filter-tags="create new assets">
-                            <span class="nav-link-text" data-i18n="nav.create_assets">New Asset</span>
+                    <li class="{{ request()->is('asset/add') ? 'active' : '' }}">
+                        <a href="/asset/add" title="New Asset" data-filter-tags="create new assets">
+                            <span class="nav-link-text" data-i18n="nav.create_assets">Add New Asset</span>
                         </a>
                     </li>
                 </ul>
