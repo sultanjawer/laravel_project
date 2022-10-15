@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {{env('APP_NAME')}} | {{ $pagedata['controller'] }}
+        {{env('APP_NAME')}} | {{ $pagedata['controller'] ?? config('app.name', 'Application') }}
     </title>
     <meta name="description" content="Page Title">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
