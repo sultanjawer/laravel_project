@@ -61,19 +61,22 @@
                 <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
                     <div class="d-flex align-items-center container p-0">
                         <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9 border-0">
-                            <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
-                                <img src="/img/favicon/favicon.png" alt="simethris" aria-roledescription="logo">
-                                <span class="page-logo-text mr-1 hidden-sm-down">
-                                    <img src="/img/logo-icon.png" alt="simethris" aria-roledescription="logo" style="width:150px; height:auto;">
-                                </span>
+                            <a href=" javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
+                                <img src="{{ asset('img/logo.png') }}" alt="simethris" aria-roledescription="logo">
+                                <span class="page-logo-text mr-1 hidden-sm-down">Simethris WebApp</span>
                                 <span class="page-logo-text mr-1 d-sm-block d-md-none">Simethris MobileApp</span>
                             </a>
                         </div>
                         <div class="ml-auto">
-                            <ol class="nav ">
+                            <ol class="nav">
                                 <li class="nav-item mr-3">
                                     <a href="javascript:void(0);" class="btn-link text-white" role="button" onclick="introJs().start();">
                                         Start Tour
+                                    </a>
+                                </li>
+                                <li class="nav-item mr-1">
+                                    <a href="/v2/register" class="btn-link text-white">
+                                        Register an Account
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -93,39 +96,19 @@
                     </div>
                 </div>
 
-                <div class="flex-1 my-bg" style="background: url(img/svg/pattern-1.svg) no-repeat center bottom fixed; background-size: cover;">
+                <div class="flex-1 my-bg" style="background: url(htt://laravelproject/asset/public/img/backgrounds/simet.jpg) no-repeat center bottom fixed; background-size: cover;">
                     <div class="container py-4 py-lg-5 my-lg-5 px-4 px-sm-0">
                         <div class="row">
                             <div class="col col-md-6 col-lg-7 hidden-sm-down">
                                 <h2 class="fs-xxl fw-500 mt-4 text-white">
-                                    Simethris V.3.0
-                                    <small class="h3 fw-300 mt-3 mb-5 text-white opacity-100">
-                                        Bagi Pemegang RIPH yang akan mengakses aplikasi ini, Anda harus memiliki akun pada Aplikasi RIPH Online terlebih dahulu.
+                                    New Simethris 2021
+                                    <small class="h3 fw-300 mt-3 mb-5 text-white opacity-60">
+                                        Halaman ini ditujukan bagi Anda yang ingin melaporkan realisasi wajib tanam-produksi untuk Rekomendasi Import Produk Hortikultura (RIPH) periode terbit sebelum 2021.
                                         <br>
-                                        Halaman ini bukan yang Anda maksudkan? silahkan kembali ke <a href="/" class="fw-700 text-white">menu awal </a>untuk memilih halaman tujuan Anda.
-                                        <p>Belum memiliki akun? silahkan melakukan pendaftaran <a href="http://riph.pertanian.go.id/" class="fw-700 text-white">di sini.</a></p>
+                                        Halaman ini bukan yang Anda maksudkan? silahkan kembali ke menu awal untuk memilih halaman tujuan Anda.
                                     </small>
                                 </h2>
-                                <a href="#" class="fs-lg fw-500 text-white opacity-70">Learn more &gt;&gt;</a>
-                                <div class="d-sm-flex flex-column align-items-center justify-content-center d-md-block">
-                                    <div class="px-0 py-1 mt-5 text-white fs-nano opacity-50">
-                                        Associate
-                                    </div>
-                                    <div class="d-flex flex-row opacity-70 align-items-center">
-                                        <a href="http://riph.pertanian.go.id/" class="text-white mr-2">
-                                            <img src="/img/riphonline.svg" alt="simethris" aria-roledescription="logo" style="width:25px; height:auto;">
-                                        </a>
-                                        <a href="#" class="mr-2 fs-xxl text-white" hidden>
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                        <a href="#" class="mr-2 fs-xxl text-white" hidden>
-                                            <i class="fab fa-google-plus-square"></i>
-                                        </a>
-                                        <a href="#" class="mr-2 fs-xxl text-white" hidden>
-                                            <i class="fab fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="/" class="fs-lg fw-500 text-white opacity-70">Kembali ke halaman menu &gt;&gt;</a>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 ml-auto shadow-lg">
                                 <h1 class="text-white fw-300 mb-3 d-sm-block d-md-none">
@@ -135,26 +118,7 @@
                                     <div class="d-sm-block d-md-none text-center mt-0 mb-1">
                                         <img src="{{ asset('img/logo-icon.png') }}" alt="simethris" aria-roledescription="logo" style="width:150px; height:auto;">
                                     </div>
-                                    <form id="js-login" novalidate="" action="/beranda">
-                                        <div class="form-group">
-                                            <label class="form-label" for="roleaccess">User Role</label>
-                                            <div class="input-group" data-toggle="tooltip" title data-original-title="Role Anda di Aplikasi ini" data-title="Pilih Role Pengguna!" data-intro="Pilih Role Pengguna Anda" data-step="2">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">
-                                                        <span class="fal fa-user-lock"></span>
-                                                    </div>
-                                                </div>
-                                                <select id="roleaccess" name="roleaccess" type="text" class="form-control form-control-md" required autocomplete="roleaccess" autofocus placeholder="select role" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                                                    <option hidden>- select Your Role Access</option>
-                                                    <option value="">- Demo Admin</option>
-                                                    <option value="">- Demo User</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                    No, you missed this one.
-                                                </div>
-                                            </div>
-                                            <div class="help-block text-muted">select user role access</div>
-                                        </div>
+                                    <form id="js-login" novalidate="" action="/v2/beranda">
                                         <div class="form-group">
                                             <label class="form-label" for="username">Username</label>
                                             <div class="input-group" data-toggle="tooltip" title data-original-title="Your Username" data-title="Nama Pengguna (username)" data-intro="Type your username here" data-step="3">
@@ -168,7 +132,6 @@
                                                     No, you missed this one.
                                                 </div>
                                             </div>
-                                            <div class="help-block text-muted">your username</div>
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="password">Password</label>
@@ -188,7 +151,6 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="help-block text-muted">your password</div>
                                         </div>
                                         <div class="form-group text-left" data-title="Ingat Saya" data-intro="Centang jika Anda ingin langsung masuk jika login berhasil" data-step="5">
                                             <div class="custom-control custom-checkbox">
@@ -197,11 +159,14 @@
                                             </div>
                                         </div>
                                         <div class="row no-gutters">
-                                            <div class="col-lg-6 pl-lg-1 my-2" data-title="Tombol masuk" data-intro="Klik tombol ini untuk mengakses aplikasi jika seluruh kolom telah terisi" data-step="6">
-                                                <button type="submit" class="btn btn-danger btn-block btn-sm">Sign in</button>
+                                            <div class="col-lg-12 pl-lg-1 my-2" data-title="Tombol masuk" data-intro="Klik tombol ini untuk mengakses aplikasi jika seluruh kolom telah terisi" data-step="6">
+                                                <button id="js-login-btn" type="submit" class="btn btn-block btn-info btn-block btn-sm">Sign in</button>
                                             </div>
-                                            <div class="col-lg-6 pl-lg-1 my-2">
-                                                <button id="js-login-btn" type="submit" class="btn btn-info btn-block btn-sm">Secure login</button>
+                                        </div>
+                                        <div class="row no-gutters mt-3">
+                                            <span>Belum memiliki akun?</span>
+                                            <div class="col-lg-12 pl-lg-1 my-2">
+                                                <a href="/v2/register" class="btn btn-block btn-danger btn-block btn-sm">Daftarkan Akun</a>
                                             </div>
                                         </div>
                                     </form>

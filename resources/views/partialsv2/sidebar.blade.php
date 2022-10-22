@@ -2,8 +2,8 @@
 <aside class="page-sidebar">
     <div class="page-logo">
         <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
-            <img src="/img/logo.png" alt="Project WebApp" aria-roledescription="logo">
-            <span class="page-logo-text mr-1">Project WebApp</span>
+            <img src="/img/favicon.png" alt="Project WebApp" aria-roledescription="logo">
+            <img src="/img/logo-icon.png" class="page-logo-text mr-1" alt="Simethris" aria-roledescription="logo" style="width:50px; height:auto;">
             <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
             <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
         </a>
@@ -19,11 +19,11 @@
             </div>
         </div>
         <div class="info-card">
-            <img src="/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Administrator">
+            <img src="/img/avatars/farmer.png" class="profile-image rounded-circle" alt="Administrator">
             <div class="info-card-text">
                 <a href="#" class="d-flex align-items-center text-white">
                     <span class="text-truncate text-truncate-sm d-inline-block">
-                        Administrator
+                        Liason Officer
                     </span>
                 </a>
                 <span class="d-inline-block text-truncate text-truncate-sm">Bogor, Indonesia</span>
@@ -37,61 +37,44 @@
 						TIP: The menu items are not auto translated. You must have a residing lang file associated with the menu saved inside dist/media/data with reference to each 'data-i18n' attribute.
 						-->
         <ul id="js-nav-menu" class="nav-menu">
-            <li class="{{ request()->is('beranda') ? 'active' : '' }}">
-                <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
+            <li class="{{ request()->is('v2/beranda') ? 'active' : '' }}">
+                <a href="/v2/beranda" title="Beranda" data-filter-tags="beranda home">
                     <i class="fal fa-home"></i>
                     <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
                 </a>
             </li>
-            <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
-                <a href="/dashboard" title="Dashboard" data-filter-tags="dashboard analytic monitoring">
+            <li class="{{ request()->is('v2/dashboard') | request()->is('v2/pemetaan') ? 'active' : '' }}">
+                <a href="javascript:void(0);" title="Dashboard" data-filter-tags="dashboard">
                     <i class="fal fa-analytics"></i>
                     <span class="nav-link-text" data-i18n="nav.dashboard">Dashboard</span>
                 </a>
-            </li>
-            <li class="nav-title">Sub Applications</li>
-            <li class="{{ request()->is('asset*') ? 'active' : '' }}">
-                <a href="javascript:void(0);" title="Assets Management" data-filter-tags="asset management">
-                    <i class="fal fa-inventory"></i>
-                    <span class="nav-link-text" data-i18n="nav.asset_management">Assets Management</span>
-                </a>
                 <ul>
-                    <li class="{{ request()->is('asset') ? 'active' : '' }}">
-                        <a href="/asset" title="Asset List" data-filter-tags="assets list">
-                            <span class="nav-link-text" data-i18n="nav.assets_list">Assets List</span>
+                    <li class="{{ request()->is('v2/dashboard') ? 'active' : '' }}">
+                        <a href="dashboard" title="Dashboard" data-filter-tags="dashboard">
+                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('asset/add') ? 'active' : '' }}">
-                        <a href="/asset/add" title="New Asset" data-filter-tags="create new assets">
-                            <span class="nav-link-text" data-i18n="nav.create_assets">Add New Asset</span>
+                    <li class="{{ request()->is('v2/pemetaan') ? 'active' : '' }}">
+                        <a href="pemetaan" title="Pemetaan" data-filter-tags="dashboard pemetaan">
+                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Pemetaan</span>
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li class="nav-title">User Tasks</li>
+            <li class="{{ request()->is('v2/riphlist*') ? 'active' : '' }}">
+                <a href="/v2/riphlist" title="Data RIPH" data-filter-tags="riph">
+                    <i class="fal fa-ballot"></i>
+                    <span class="nav-link-text" data-i18n="nav.riph_list">Pelaporan Komitmen</span>
+                </a>
+            </li>
+            <li class="{{ request()->is('v2/kelompoktani*') ? 'active' : '' }}">
+                <a href="/v2/kelompoktani" title="Kelompoktani" data-filter-tags="kelompoktani">
+                    <i class="fal fa-users"></i>
+                    <span class="nav-link-text" data-i18n="nav.riph_list">Kelompoktani</span>
+                </a>
             </li>
             <li class="nav-title">Settings</li>
-            <li class="{{ request()->is('admin*') ? 'active' : '' }}">
-                <a href="javascript:void(0);" title="Users Management" data-filter-tags="users management">
-                    <i class="fal fa-users"></i>
-                    <span class="nav-link-text" data-i18n="nav.users_management">Users Management</span>
-                </a>
-                <ul>
-                    <li class="{{ request()->is('admin/permissions') ? 'active' : '' }}">
-                        <a href=" admin/permissions" title="Permissions" data-filter-tags="user permissions">
-                            <span class="nav-link-text" data-i18n="nav.user_permissions">Permissions</span>
-                        </a>
-                    </li>
-                    <li class="{{ request()->is('admin/roles') ? 'active' : '' }}">
-                        <a href="admin/roles" title="Roles" data-filter-tags="user roles">
-                            <span class="nav-link-text" data-i18n="nav.user_roles">Roles</span>
-                        </a>
-                    </li>
-                    <li class="{{ request()->is('admin/users') ? 'active' : '' }}">
-                        <a href="admin/users" title="Users" data-filter-tags="user list">
-                            <span class="nav-link-text" data-i18n="nav.user">Users List</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
             <li class="{{ request()->is('profile*') ? 'active' : '' }}">
                 <a href="javascript:void(0);" title="Profiles" data-filter-tags="Profiles">
                     <i class="fal fa-address-card"></i>
@@ -108,12 +91,13 @@
                             <span class="nav-link-text" data-i18n="nav.company_profile">Company Profile</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/profile/password" title="Change Password" data-filter-tags="change password">
-                            <span class="nav-link-text" data-i18n="nav.change_password">Change Password</span>
-                        </a>
-                    </li>
                 </ul>
+            </li>
+            <li>
+                <a class="{{ request()->is('profile/password') ? 'active' : '' }}" href="/profile/password" title="Change Password" data-filter-tags="change password">
+                    <i class="fal fa-key"></i>
+                    <span class="nav-link-text" data-i18n="nav.users_management">Change Password</span>
+                </a>
             </li>
             <li class="nav-title">Navigation Title</li>
             <li>

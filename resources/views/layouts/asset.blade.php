@@ -71,7 +71,7 @@
                     @include('partials.breadcrumb')
                     <!-- END Page Content -->
                     <!-- BEGIN subheader -->
-                    @include('partials.subheader')
+                    @include('partials.subheaderasset')
                     <!-- END subheader -->
                     <!-- BEGIN system alert. can be use for flash message or pushed app notification sent by Administrator -->
                     <!-- END system alert  -->

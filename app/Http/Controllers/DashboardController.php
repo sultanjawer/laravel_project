@@ -20,7 +20,7 @@ class DashboardController extends Controller
             'alertcontent' => 'Alert/information should appear in here.',
         );
         $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
-        $breadcrumbs = ['App Name', 'Module Title', 'Page Title']; //add as much array item as needed
+        $breadcrumbs = ['Simethris', 'Module Title', 'Page Title']; //add as much array item as needed
         return view('admin.dashboard.index', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
     }
 }

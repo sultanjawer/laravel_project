@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {{env('APP_NAME')}}
+        Simethris V.2 | {{ $pagedata['controller'] ?? config('app.name', 'Application') }}
     </title>
     <meta name="description" content="Page Title">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,90 +58,38 @@
     <div class="page-wrapper">
         <div class="page-inner">
             <!-- BEGIN Left Aside sidebar -->
-
+            @include('partialsv2.sidebar')
             <!-- END Left Aside sidebar -->
             <div class="page-content-wrapper">
                 <!-- BEGIN Page Header -->
-
+                @include('partialsv2.header')
                 <!-- END Page Header -->
                 <!-- BEGIN Page Content -->
                 <!-- the #js-page-content id is needed for some plugins to initialize -->
                 <main id="js-page-content" role="main" class="page-content">
                     <!-- BEGIN breadcrumb -->
-
+                    @include('partialsv2.breadcrumb')
                     <!-- END Page Content -->
                     <!-- BEGIN subheader -->
-
+                    @include('partialsv2.subheader')
                     <!-- END subheader -->
                     <!-- BEGIN system alert. can be use for flash message or pushed app notification sent by Administrator -->
                     <!-- END system alert  -->
                     <!-- Your main content goes below here: -->
-                    <div class="" data-title="System Alert" data-intro="Ini adalah Panel yang berisi informasi atau pemberitahuan penting untuk Anda." data-step="1"></div>
-                    <!-- welcome message -->
-                    <div class="row mb-3">
-                        <div class="col text-center">
-                            <h1 class="hidden-md-down">Selamat Datang di </h1>
-                            <h1 class="display-4 fw-700">{{env('APP_NAME')}}</h1>
-                            <h1 class="display-4 hidden-sm-up">Selamat Datang di {{env('APP_NAME')}}</h1>
-                            <h4 class="hidden-md-down">
-                                <div class="d-flex flex-start w-100">
-                                    <div class="d-flex flex-fill">
-                                        <div class="flex-fill">
-                                            <span class="text-muted js-get-date"></span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </h4>
-                            <span>Silahkan pilih menu di bawah ini untuk melanjutkan</span>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-center">
-                        <div class="col-md-12 order-md-2 mb-4">
-                            <div class="row justify-content-center text-center">
-                                <div class="card border m-auto m-lg-2" style="max-width: 18rem;">
-                                    <img src="img/card-backgrounds/cover-1-lg.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-500">Administrator & Verifikator</h5>
-                                        <p class="card-text text-left">Klik tombol di bawah jika Role Anda adalah Administrator atau Verifikator.</p>
-                                    </div>
-                                    <div class="card-footer"><a href="/login" class="btn btn-sm btn-primary"><i class="fal fa-plane-departure mr-1"></i>Kunjungi</a></div>
-                                </div>
-                                <div class="card border m-auto m-lg-2" style="max-width: 18rem;">
-                                    <img src="img/card-backgrounds/cover-2-lg.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-500 text-danger">Simethris versi 2021</h5>
-                                        <p class="card-text text-left">Jika Anda ingin melaporkan Realisasi Wajib Tanam-Produksi untuk RIPH periode sebelum Tahun 2022.</p>
-
-                                    </div>
-                                    <div class="card-footer"><a href="/v2" class="btn btn-sm btn-danger"><i class="fal fa-plane-departure mr-1"></i>Kunjungi</a></div>
-                                </div>
-                                <div class="card border m-auto m-lg-2" style="max-width: 18rem;">
-                                    <img src="img/card-backgrounds/cover-3-lg.png" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-500">Simethris versi 3.0</h5>
-                                        <p class="card-text text-left">Jika Anda ingin melaporkan Realisasi Wajib Tanam-Produksi untuk RIPH periode Tahun 2022 dan setelahnya.</p>
-
-                                    </div>
-                                    <div class="card-footer"><a href="/login" class="btn btn-sm btn-warning"><i class="fal fa-plane-departure mr-1"></i>Kunjungi</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @yield('content')
                 </main>
                 <!-- this overlay is activated only when mobile menu is triggered -->
                 <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div> <!-- END Page Content -->
                 <!-- BEGIN Page Footer -->
-
+                @include('partialsv2.footer')
                 <!-- END Page Footer -->
                 <!-- BEGIN Shortcuts -->
-
+                @include('partialsv2.shortcut')
                 <!-- END Shortcuts -->
                 <!-- BEGIN Color profile -->
                 <!-- this area is hidden and will not be seen on screens or screen readers -->
                 <!-- we use this only for CSS color refernce for JS stuff -->
-                @include('partials.colorprofile')
+                @include('partialsv2.colorprofile')
                 <!-- END Color profile -->
             </div>
         </div>
@@ -149,13 +97,13 @@
     <!-- END Page Wrapper -->
     <!-- BEGIN Quick Menu -->
     <!-- to add more items, please make sure to change the variable '$menu-items: number;' in your _page-components-shortcut.scss -->
-
+    @include('partialsv2.quickmenu')
     <!-- END Quick Menu -->
     <!-- BEGIN Messenger -->
-
+    @include('partialsv2.messenger')
     <!-- END Messenger -->
     <!-- BEGIN Page Settings -->
-    @include('partials.pagesettings')
+    @include('partialsv2.pagesettings')
     <!-- end page settings -->
     <!-- end page wrapper -->
 
