@@ -21,7 +21,7 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon.png') }}">
-    <link rel="mask-icon" href="{{ asset('img/logo.png') }}" color="#5bbad5">
+    <link rel="mask-icon" href="{{ asset('img/favicon.png') }}" color="#5bbad5">
     <link rel="stylesheet" media="screen, print" href="{{ asset('css/miscellaneous/reactions/reactions.css') }}">
 
     <!-- You can add your own stylesheet here to override any styles that comes before it

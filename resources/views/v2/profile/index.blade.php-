@@ -1,9 +1,9 @@
 @extends ('layoutsv2.global')
 @section ('style')
+
 @endsection
 @section('content')
-<div class="" data-title="System Alert" data-intro="Ini adalah Panel yang berisi informasi atau pemberitahuan penting untuk Anda." data-step="1">@include('partialsv2.sysalert')</div>
-
+<div class="" data-title="System Alert" data-intro="Ini adalah Panel yang berisi informasi atau pemberitahuan penting untuk Anda." data-step="1">@include('partials.sysalert')</div>
 <form action="save">
     <div class="row">
         <div class="col-md-4">
@@ -136,4 +136,9 @@
 <!-- @parent -->
 <!-- start script for this page -->
 @section('scripts')
+<script src="{{ asset('js/datagrid/datatables/datatables.bundle.js') }}"></script>
+<script src="{{ asset('js/datagrid/datatables/datatables.export.js') }}"></script>
+<script>
+
+</script>
 @endsection

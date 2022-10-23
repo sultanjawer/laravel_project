@@ -5,7 +5,6 @@ use \App\Http\Controllers\{
     LandingController,
     DashboardController,
     AssetController,
-    ProfilesController,
 };
 use \App\Http\Controllers\v2\{
     Dashboardv2Controller,
@@ -20,6 +19,7 @@ use \App\Http\Controllers\v2\{
     FilesController,
     FeedsController,
     MessengerController,
+    MyprofileController,
 };
 
 
@@ -119,16 +119,16 @@ Route::get('/v2/messenger/deleted', [MessengerController::class, 'trash'])->name
 Route::get('/v2/messenger/create', [MessengerController::class, 'create'])->name('create');
 Route::get('/v2/messenger/read', [MessengerController::class, 'read'])->name('read');
 
+//v2 profile
+Route::get('/v2/myprofile', [MyprofileController::class, 'index'])->name('myprofile');
+Route::get('/v2/myprofile/edit/{id}', [MyprofileController::class, 'edit'])->name('edit');
+Route::put('/v2/myprofile/update/{id}', [MyprofileController::class, 'update'])->name('update');
+
+
+
 //Assets Management
 Route::get('asset', [AssetController::class, 'index'])->name('asset');
 Route::get('asset/add', [AssetController::class, 'add'])->name('add');
 Route::post('asset/store', [AssetController::class, 'store'])->name('store');
-Route::get('asset/edit/{id}', [AssetController::class, 'edit'])->name('edit');
-Route::put('asset/update/{id}', [AssetController::class, 'update'])->name('update');
-
-//Users Management
-
-//Profiles
-Route::get('profile', [ProfilesController::class, 'index'])->name('profile');
-Route::get('profile/edit/{id}', [ProfilesController::class, 'edit'])->name('edit');
-Route::get('profile/password', [ProfilesController::class, 'password'])->name('password');
+Route::get('asset/edit', [AssetController::class, 'edit'])->name('edit');
+Route::put('asset/update', [AssetController::class, 'update'])->name('update');

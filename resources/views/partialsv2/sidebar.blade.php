@@ -142,19 +142,19 @@
                 </a>
             </li>
             <li class="nav-title">Settings</li>
-            <li class="{{ request()->is('profile*') ? 'active' : '' }}">
+            <li class="{{ request()->is('v2/profile*') ? 'active' : '' }}">
                 <a href="javascript:void(0);" title="Profiles" data-filter-tags="Profiles">
                     <i class="fal fa-address-card"></i>
                     <span class="nav-link-text" data-i18n="nav.users_management">Profiles</span>
                 </a>
                 <ul>
-                    <li class="{{ request()->is('profile/edit*') ? 'active' : '' }}">
-                        <a href="/profile/edit/1" title="My Profile" data-filter-tags="my profile">
+                    <li class="{{ request()->is('v2/myprofile/edit') ? 'active' : '' }}">
+                        <a href="/v2/myprofile/edit/1" title="My Profile" data-filter-tags="my profile">
                             <span class="nav-link-text" data-i18n="nav.category">My Profile</span>
                         </a>
                     </li>
                     <li class="{{ request()->is('profile/company') ? 'active' : '' }}">
-                        <a href="#" title="Company Profile" data-filter-tags="company profile">
+                        <a href="/v2/profile/company" title="Company Profile" data-filter-tags="company profile">
                             <span class="nav-link-text" data-i18n="nav.company_profile">Company Profile</span>
                         </a>
                     </li>
