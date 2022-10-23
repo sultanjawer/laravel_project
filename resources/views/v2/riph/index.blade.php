@@ -11,7 +11,7 @@
                     Daftar Komitmen <span class="fw-300"><i>Wajib Tanam</i></span>
                 </h2>
                 <div class="panel-toolbar">
-                    <a class="btn btn-xs btn-primary mr-1 ml-1" href="/v2/riphlist/add"><i class="fal fa-plus mr-1"></i>Add RIPH</a>
+                    <a class="btn btn-xs btn-primary mr-1 ml-1" href="/v2/riphlist/create"><i class="fal fa-plus mr-1"></i>Add RIPH</a>
                     @include('partialsv2.globaltoolbar')
                 </div>
             </div>

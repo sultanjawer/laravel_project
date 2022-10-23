@@ -74,6 +74,73 @@
                     <span class="nav-link-text" data-i18n="nav.riph_list">Kelompoktani</span>
                 </a>
             </li>
+            <li class="{{ request()->is('v2/pengajuan') | request()->is('v2/skl') ? 'active' : '' }}">
+                <a href="javascript:void(0);" title="Daftar Pengajuan" data-filter-tags="Pengajuan Verifikasi SKL">
+                    <i class="fal fa-ballot-check"></i>
+                    <span class="nav-link-text" data-i18n="nav.pengajuan">Daftar Verifikasi</span>
+                </a>
+                <ul>
+                    <li class="{{ request()->is('v2/pengajuan') ? 'active' : '' }}">
+                        <a href="/v2/pengajuan" title="Daftar Pengajuan" data-filter-tags="daftar pengajuan verifikasi">
+                            <span class="nav-link-text" data-i18n="nav.list_pengajuan">Daftar Pengajuan</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('v2/skl') ? 'active' : '' }}">
+                        <a href="/v2/skl" title="Daftar SKL" data-filter-tags="daftar skl lunas">
+                            <span class="nav-link-text" data-i18n="nav.list_skl">Daftar SKL</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="{{ request()->is('v2/files*') ? 'active' : '' }}">
+                <a href="javascript:void(0);" title="Pengelolaan Berkas files management" data-filter-tags="Daftar Berkas Dokumen Galeri Foto">
+                    <i class="fal fa-folder"></i>
+                    <span class="nav-link-text" data-i18n="nav.files">Pengelolaan Berkas</span>
+                </a>
+                <ul>
+                    <li class="{{ request()->is('v2/files/myfiles') ? 'active' : '' }}">
+                        <a href="/v2/files/myfiles" title="My Files" data-filter-tags="daftar berkas dokumen">
+                            <span class="nav-link-text" data-i18n="nav.my_files">Berkas Saya</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('v2/files/mygalleries') ? 'active' : '' }}">
+                        <a href="/v2/files/mygalleries" title="Galeri" data-filter-tags="foto unggah">
+                            <span class="nav-link-text" data-i18n="nav.list_skl">Galeri Saya</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('v2/files/templates') ? 'active' : '' }}">
+                        <a href="/v2/files/templates" title="Master Templates" data-filter-tags="master templat contoh dokumen berkas">
+                            <span class="nav-link-text" data-i18n="nav.list_skl">Templat Master</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-title">Feeds & Messages</li>
+            <li class="{{ request()->is('v2/feeds*') ? 'active' : '' }}">
+                <a href="/v2/feeds" title="Feeds" data-filter-tags="feeds news information">
+                    <i class="fal fa-rss"></i>
+                    <span class="nav-link-text" data-i18n="nav.feeds">Feeds</span>
+                </a>
+            </li>
+            <li class="{{ request()->is('v2/messenger*') ? 'active' : '' }}">
+                <a href="/v2/messenger" title="Messenger" data-filter-tags="messages pesan mail messenger">
+                    <i class="fal fa-mailbox"></i>
+                    <span class="nav-link-text" data-i18n="nav.messenger">Messenger</span>
+                </a>
+            </li>
+            <li class="nav-title">Documentations</li>
+            <li class="{{ request()->is('v2/howto*') ? 'active' : '' }}">
+                <a href="/v2/howto" title="How To" data-filter-tags="how to manual tutorial">
+                    <i class="fal fa-books"></i>
+                    <span class="nav-link-text" data-i18n="nav.feeds">How To's</span>
+                </a>
+            </li>
+            <li class="{{ request()->is('v2/build*') ? 'active' : '' }}">
+                <a href="/v2/build" title="Build Note" data-filter-tags="build note version control">
+                    <i class="fal fa-code"></i>
+                    <span class="nav-link-text" data-i18n="nav.build">Build Notes</span>
+                </a>
+            </li>
             <li class="nav-title">Settings</li>
             <li class="{{ request()->is('profile*') ? 'active' : '' }}">
                 <a href="javascript:void(0);" title="Profiles" data-filter-tags="Profiles">

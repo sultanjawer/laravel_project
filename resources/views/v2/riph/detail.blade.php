@@ -228,9 +228,9 @@
                                 <td>API Periode</td>
                                 <td class="text-center">
                                     <div class="justify-content-center">
-                                        <a class="text-info mr-1" href="create pks" role="button" data-toggle="tooltip" data-original-title="buat Rencana Tanam/PKS" data-offset="0,10"><i class="fal fa-plus-circle"></i></a>
-                                        <a class="text-warning mr-1" href="edit pks" role="button" data-toggle="tooltip" data-original-title="ubah Rencana Tanam/PKS" data-offset="0,10"><i class="fal fa-edit"></i></a>
-                                        <a class="text-primary mr-1" href="member keltaan" role="button" data-toggle="tooltip" data-original-title="Member Management" data-offset="0,10"><i class="fal fa-users"></i></a>
+                                        <a class="text-info mr-1" href="/v2/pks/create" role="button" data-toggle="tooltip" data-original-title="buat Rencana Tanam/PKS" data-offset="0,10"><i class="fal fa-plus-circle"></i></a>
+                                        <a class="text-warning mr-1" href="/v2/pks/show" role="button" data-toggle="tooltip" data-original-title="ubah Rencana Tanam/PKS" data-offset="0,10"><i class="fal fa-edit"></i></a>
+                                        <a class="text-primary mr-1" href="/v2/pks/members" role="button" data-toggle="tooltip" data-original-title="Member Management" data-offset="0,10"><i class="fal fa-users"></i></a>
                                         <a class="text-primary mr-1" href="saprodikeltan" role="button" data-toggle="tooltip" data-original-title="Bantuan Saprodi" data-offset="0,10"><i class="fal fa-hands-helping"></i></a>
                                         <a class="text-danger mr-1" href="" role="button" data-toggle="tooltip" data-original-title="hapus Rencana Tanam/PKS" data-offset="0,10"><i class="fal fa-trash-alt"></i></a>
                                     </div>
@@ -441,13 +441,13 @@
                 <div class="panel-content justify-content-center text-center">
                     <div class="row d-flex">
                         <div class="col-md-4 my-1">
-                            <a href="/v2/riphlist/edit" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" data-offset="0,10" data-original-title="Ubah data Komitmen"><i class="fas fa-edit"></i> Ubah data Komitmen</a>
+                            <a href="/v2/riphlist/show" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" data-offset="0,10" data-original-title="Ubah data Komitmen"><i class="fas fa-edit"></i> Ubah data Komitmen</a>
                         </div>
                         <div class="col-md-4 my-1">
-                            <a href="/pengajuan/verification_check" class="btn btn-sm btn-warning btn-block" data-toggle="tooltip" data-offset="0,10" data-original-title="Ajukan Verifikasi"><i class="fas fa-badge-check"></i> Ajukan Verifikasi</a>
+                            <a href="/v2/pengajuan/vcheck" class="btn btn-sm btn-warning btn-block" data-toggle="tooltip" data-offset="0,10" data-original-title="Ajukan Verifikasi"><i class="fas fa-badge-check"></i> Ajukan Verifikasi</a>
                         </div>
                         <div class="col-md-4 my-1">
-                            <a href="/pengajuan/accomplishment_check" class="btn btn-sm btn-success btn-block" data-toggle="tooltip" data-offset="0,10" data-original-title="Ajukan Keterangan Lunas"><i class="fas fa-award"></i> Ajukan SKL</a>
+                            <a href="/v2/pengajuan/sklcheck" class="btn btn-sm btn-success btn-block" data-toggle="tooltip" data-offset="0,10" data-original-title="Ajukan Keterangan Lunas"><i class="fas fa-award"></i> Ajukan SKL</a>
                         </div>
                     </div>
                 </div>

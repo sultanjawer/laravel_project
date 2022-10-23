@@ -86,10 +86,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row no-gutters">
-                <div class="col-md-4 ml-auto text-right">
-                    <button id="js-login-btn" type="submit" class="btn btn-block btn-danger btn-sm mt-3">Submit</button>
+                <div class="card-footer">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 ml-auto text-right d-flex">
+                            <a href="/v2/kelompoktani" class="mr-1 btn btn-block btn-warning btn-sm mt-3">Cancel</a>
+                            <button id="js-login-btn" type="submit" class="btn btn-block btn-primary btn-sm mt-3">Save</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {{env('APP_NAME')}} | Login
+        SIMETHRIS V.2.0 | Login
     </title>
     <meta name="description" content="Login">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
