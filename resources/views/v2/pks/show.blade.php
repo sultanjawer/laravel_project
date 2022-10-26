@@ -267,7 +267,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="col-md-4 ml-auto text-right">
-                        <a href="/v2/riphlist/detail" class="btn btn-warning btn-sm mt-3">Cancel</a>
+                        <a href="/v2/commitment/detail" class="btn btn-warning btn-sm mt-3">Cancel</a>
                         <button id="js-login-btn" type="submit" class="btn btn-primary btn-sm mt-3">Submit</button>
                     </div>
                 </div>

@@ -12,10 +12,6 @@
                     <i class="subheader-icon fal fa-ballot-check mr-1"></i>Threads
                 </h2>
                 <div class="panel-toolbar">
-                    <!-- this button is visible to Administrator only -->
-                    <a href="/feeds/create" class="mr-1 btn btn-info btn-xs waves-effect waves-themed" role="button" data-toggle="tooltip" data-offset="0,10" data-original-title="Buat Feeds Baru">
-                        Feeds Baru
-                    </a>
 
                 </div>
             </div>

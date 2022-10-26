@@ -40,7 +40,7 @@
                                             <div class="d-block">
                                                 <span class="name d-flex align-items-center">Administrator</span>
                                             </div>
-                                            <a href="/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
+                                            <a href="/v2/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
                                                 Nam viverra diam magna, eget lobortis orci tincidunt sed<span class="badge badge-danger ml-auto"> <span class="hidden-md-down">New</span></span>
                                             </a>
                                             <div class="d-block text-muted fs-sm">
@@ -55,7 +55,7 @@
                                             <div class="d-block">
                                                 <span class="name d-flex align-items-center">Administrator</span>
                                             </div>
-                                            <a href="/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
+                                            <a href="/v2/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
                                                 Nam viverra diam magna, eget lobortis orci tincidunt sed<span class="badge badge-danger ml-auto"> <span class="hidden-md-down">New</span></span>
                                             </a>
                                             <div class="d-block text-muted fs-sm">
@@ -70,7 +70,7 @@
                                             <div class="d-block">
                                                 <span class="name d-flex align-items-center">Administrator</span>
                                             </div>
-                                            <a href="/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
+                                            <a href="/v2/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
                                                 Nam viverra diam magna, eget lobortis orci tincidunt sed<span class="badge badge-danger ml-auto"> <span class="hidden-md-down">New</span></span>
                                             </a>
                                             <div class="d-block text-muted fs-sm">
@@ -146,8 +146,9 @@
             </div>
         </div>
     </div>
-    @endsection
-    <!-- @parent -->
-    <!-- start script for this page -->
-    @section('scripts')
-    @endsection
+</div>
+@endsection
+<!-- @parent -->
+<!-- start script for this page -->
+@section('scripts')
+@endsection

@@ -46,7 +46,7 @@
                                     </td>
                                     <!-- khusus status lunas, icon tertaut dengan Surat Keterangan Lunas DIgital -->
                                     <td class="text-center">
-                                        <a title="HORE! SUDAH LUNAS" class="text-success" href="/v2/skl/formskl">
+                                        <a title="HORE! SUDAH LUNAS" class="text-success" href="/v2/userskl/formskl">
                                             <i class="fas fa-award "></i>
                                         </a>
                                     </td>

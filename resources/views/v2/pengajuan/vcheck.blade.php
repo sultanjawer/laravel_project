@@ -321,7 +321,7 @@
                                     </td>
                                     <td>31-12-2022</td>
                                     <td>
-                                        <a class="text-danger" href="/riphlist/detail"><i class="fas fa-times mr-1"></i>Tidak Ada!</a>
+                                        <a class="text-danger" href="/commitment/detail"><i class="fas fa-times mr-1"></i>Tidak Ada!</a>
                                     </td>
                                 </tr>
                             </tbody>

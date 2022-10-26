@@ -1,331 +1,351 @@
 @extends ('layouts.admin')
 @section ('style')
+<style>
+    .bg-gradient {
+        background: linear-gradient(90deg, #beaed7, #886ab5);
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .display-6 {
+        font-size: 1.5rem;
+    }
+</style>
 @endsection
 @section('content')
 <div class="" data-title="System Alert" data-intro="Ini adalah Panel yang berisi informasi atau pemberitahuan penting untuk Anda." data-step="1">@include('partials.sysalert')</div>
 <div class="row">
-    <div class="col-lg-9">
-        <h5 class="fw-500"><i class="subheader-icon fal fa-globe-asia mr-1"></i>Laporan Umum</h5>
-        <div class="row" data-title="Laporan Umum" data-intro="Panel ini menampilkan ringkasan data umum. Berisi data W sebagai informasi tentang ringkasan W; X sebagai informasi ringkasan X, dst." data-step="2">
-            <div class="col-sm-3 col-xl-3">
-                <div class="p-4 bg-primary-300 rounded overflow-hidden position-relative text-white mb-g">
-                    <div class="">
-                        <h3 class="h1 d-block l-h-n m-0 fw-500">
-                            21.5k
-                            <small class="m-0 l-h-n">users signed up</small>
-                        </h3>
-                    </div>
-                    <i class="fal fa-user position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:6rem"></i>
-                </div>
+    <!--
+		Yang ingin dicapai pada halaman ini adalah
+		Administrator dengan role tertinggi dapat melihat seluruh data dalam aplikasi secara ringkas dan cepat.
+		Data yang ditampilkan:
+		Progress Realisasi pelaku usaha, progress verifikasi, dan progress lunas.
+	-->
+    <div class="col-md-3">
+        <div id="new_request" class="p-3 bg-danger-300 rounded overflow-hidden position-relative text-white mb-g">
+            <div class="">
+                <h3 class="display-5 d-block l-h-n m-0 fw-500" data-toggle="tooltip" title data-original-title="Jumlah Perusahaan yang telah masuk dalam sistem SIMETHRIS">
+                    <!-- nilai ini diperoleh dari jumlah seluruh pengajuan yang belum diverifikasi. where status = 1 (user) -->
+                    117
+                    <small class="m-0 l-h-n">Perusahaan</small>
+                </h3>
             </div>
-            <div class="col-sm-3 col-xl-3">
-                <div class="p-4 bg-warning-400 rounded overflow-hidden position-relative text-white mb-g">
-                    <div class="">
-                        <h3 class="h1 d-block l-h-n m-0 fw-500">
-                            $10,203
-                            <small class="m-0 l-h-n">Visual Index Figure</small>
-                        </h3>
-                    </div>
-                    <i class="fal fa-gem position-absolute pos-right pos-bottom opacity-15  mb-n1 mr-n4" style="font-size: 6rem;"></i>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xl-3">
-                <div class="p-4 bg-success-200 rounded overflow-hidden position-relative text-white mb-g">
-                    <div class="">
-                        <h3 class="h1 d-block l-h-n m-0 fw-500">
-                            - 103.72
-                            <small class="m-0 l-h-n">Offset Balance Ratio</small>
-                        </h3>
-                    </div>
-                    <i class="fal fa-lightbulb position-absolute pos-right pos-bottom opacity-15 mb-n5 mr-n6" style="font-size: 8rem;"></i>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xl-3">
-                <div class="p-4 bg-info-200 rounded overflow-hidden position-relative text-white mb-g">
-                    <div class="">
-                        <h3 class="h1 d-block l-h-n m-0 fw-500">
-                            +40%
-                            <small class="m-0 l-h-n">Product level increase</small>
-                        </h3>
-                    </div>
-                    <i class="fal fa-globe position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n4" style="font-size: 6rem;"></i>
-                </div>
-            </div>
+            <i class="fal fa-landmark position-absolute pos-right pos-bottom opacity-25 mb-n1 mr-n1" style="font-size:4rem"></i>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div id="panel-2" class="panel" data-title="Judul panel" data-intro="Panel ini menampilkan ringkasan Judul Laporan. Berisi data Judul Laporan sebagai informasi tentang Judul Laporan" data-step="3">
-                    <div class="panel-hdr">
-                        <h2>
-                            Rp 123.456.789,-
-                        </h2>
-                        <div class="panel-toolbar">
-                            <select type="text" id="periode" class="form-control form-control-sm" data-toggle="tooltip" title="" data-original-title="pilih tahun awal laporan" placeholder="Task..." aria-label="periode">
-                                <option hidden="">- pilih tahun laporan</option>
-                                <option disabled=""></option>
-                                <option>2022</option>
-                                <option>2023</option>
-                                <option disabled=""></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="panel-container show border-bottom">
-                        <div class="panel-content position-relative">
-                            <div class="p-1 position-absolute pos-right pos-top mt-3 mr-3 z-index-cloud d-flex align-items-center justify-content-center">
-                                <div class="border-faded border-top-0 border-left-0 border-bottom-0 py-2 pr-4 mr-3 hidden-sm-down">
-                                    <div class="text-right fw-500 l-h-n d-flex flex-column">
-                                        <div class="h3 m-0 d-flex align-items-center justify-content-end">
-                                            <div class='icon-stack mr-2'>
-                                                <i class="base base-7 icon-stack-3x opacity-100 color-success-600"></i>
-                                                <i class="base base-7 icon-stack-2x opacity-100 color-success-500"></i>
-                                                <i class="fal fa-arrow-up icon-stack-1x opacity-100 color-white"></i>
+    </div>
+    <div class="col-md-3">
+        <div id="onprogress" class="p-3 bg-warning-300 rounded overflow-hidden position-relative text-white mb-g">
+            <div class="">
+                <h3 class="display-5 d-block l-h-n m-0 fw-500" data-toggle="tooltip" title data-original-title="Total volume RIPH yang telah masuk ke dalam sistem SIMETHRIS">
+                    <!-- nilai ini diperoleh dari jumlah seluruh pengajuan yang SEDANG diverifikasi. where status = 2 (mulai/on progress) -->
+                    868.324
+                    <small class="m-0 l-h-n">Volume Import (ton)</small>
+                </h3>
+            </div>
+            <i class="fal fa-balance-scale position-absolute pos-right pos-bottom opacity-40 mb-n1 mr-n1" style="font-size:4rem"></i>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="verified" class="p-3 bg-info-300 rounded overflow-hidden position-relative text-white mb-g">
+            <a class="position-absolute pos-right pos-top mt-2 mr-2">
+                <i class="fal fa-info-circle"></i>
+            </a>
+            <div class="">
+                <h3 class="display-5 d-block l-h-n m-0 fw-500" data-toggle="tooltip" title data-original-title="Jumlah luas tanam dalam satuan hektar yang harus dipenuhi oleh pelaku usaha yang telah masuk ke dalam sistem SIMETHRIS.">
+                    <!-- nilai ini diperoleh dari jumlah seluruh pengajuan yang TELAH diverifikasi. where status = 3 & 4 (Verified OK & Verified Perbaikan) -->
+                    7.236
+                    <small class="m-0 l-h-n">Kewajiban Tanam (ha)</small>
+                </h3>
+            </div>
+            <i class="fal fa-seedling position-absolute pos-right pos-bottom opacity-40 mb-n1 mr-n1" style="font-size:4rem"></i>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="accomplished" class="p-3 bg-success-300 rounded overflow-hidden position-relative text-white mb-g">
+            <div class="">
+                <h4 class="display-5 d-block l-h-n m-0 fw-500" data-toggle="tooltip" title data-original-title="Jumlah volume tanam dalam satuan ton yang harus dipenuhi oleh pelaku usaha yang telah masuk ke dalam sistem SIMETHRIS.">
+                    <!-- nilai ini diperoleh dari jumlah seluruh pengajuan yang TELAH LUNAS. where status = 5 (LUNAS) -->
+                    43.416
+                    <small class="m-0 l-h-n">Kewajiban Produksi (ton)</small>
+                </h4>
+            </div>
+            <i class="fal fa-dolly position-absolute pos-right pos-bottom opacity-40 mb-n1 mr-n1" style="font-size:4rem"></i>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel" id="panel-2">
+            <div class="panel-hdr">
+                <h2>
+                    <i class="subheader-icon fal fa-seedling mr-1"></i>Wajib Tanam
+                </h2>
+            </div>
+            <div class="panel-container show">
+                <div class="panel-content">
+                    <!-- Row -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-lg-5 col-sm-6 align-self-center text-center">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="realisasiTanam" role="tabpanel" aria-labelledby="realisasi">
+                                    <div class="c-chart-wrapper">
+                                        <div id="naschart" class="js-easy-pie-chart color-success-500 position-relative d-inline-flex align-items-center justify-content-center" data-percent="75.74" data-piesize="145" data-linewidth="10" data-linecap="butt" data-scalelength="7" data-toggle="tooltip" title data-original-title="74,24% dari Kewajiban" data-placement="bottom">
+                                            <div class="d-flex flex-column align-items-center justify-content-center position-absolute pos-left pos-right pos-top pos-bottom fw-300 fs-xl">
+                                                <span class="fs-xxl fw-500 text-dark">74.24<sup>%</sup></span>
+                                                <!--<span class="display-3 fw-500 js-percent d-block text-dark">97.68</span>-->
                                             </div>
-                                            $44.34 / GE
                                         </div>
-                                        <span class="m-0 fs-xs text-muted">Increased Profit as per redux margins and estimates</span>
                                     </div>
                                 </div>
-                                <div class="js-easy-pie-chart color-info-400 position-relative d-inline-flex align-items-center justify-content-center" data-percent="35" data-piesize="95" data-linewidth="10" data-scalelength="5">
-                                    <div class="js-easy-pie-chart color-success-400 position-relative position-absolute pos-left pos-right pos-top pos-bottom d-flex align-items-center justify-content-center" data-percent="65" data-piesize="60" data-linewidth="5" data-scalelength="1" data-scalecolor="#fff">
-                                        <div class="position-absolute pos-top pos-left pos-right pos-bottom d-flex align-items-center justify-content-center fw-500 fs-xl text-dark">78%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="flot-sales" class="w-100" style="height: 350px; padding: 0px; position: relative;"><canvas class="flot-base" width="990" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 990px; height: 350px;"></canvas>
-                                <div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);">
-                                    <div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px;"></div>
-                                    <div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px;"></div>
-                                </div><canvas class="flot-overlay" width="990" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 990px; height: 350px;"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div id="panel-2" class="panel" data-title="Judul panel" data-intro="Panel ini menampilkan ringkasan Judul Laporan. Berisi data Judul Laporan sebagai informasi tentang Judul Laporan" data-step="5">
-                    <div class="panel-hdr">
-                        <h2>
-                            panel title
-                        </h2>
-                        <div class="panel-toolbar">
-                            toolbar
-                        </div>
-                    </div>
-                    <div class="panel-container show border-bottom">
-                        <div class="panel-content">
-                            <div class="row">
-                                <div class="col-12 align-self-center text-center">
+                                <div class="tab-pane fade" id="verifikasiTanam" role="tabpanel" aria-labelledby="verifikasiTanam">
                                     <div class="c-chart-wrapper">
-                                        <div class="js-easy-pie-chart color-primary-300 position-relative d-inline-flex align-items-center justify-content-center" data-percent="91.75" data-piesize="100" data-linewidth="5" data-scalelength="3">
-                                            <div class="fs-xl position-absolute pos-top pos-left pos-right pos-bottom d-flex align-items-center justify-content-center fw-700 text-dark">91.75%</div>
+                                        <div id="naschart" class="js-easy-pie-chart color-primary-500 position-relative d-inline-flex align-items-center justify-content-center" data-percent="75.74" data-piesize="145" data-linewidth="10" data-linecap="butt" data-scalelength="7" data-toggle="tooltip" title data-original-title="74,24% dari Kewajiban" data-placement="bottom">
+                                            <div class="d-flex flex-column align-items-center justify-content-center position-absolute pos-left pos-right pos-top pos-bottom fw-300 fs-xl">
+                                                <span class="fs-xxl fw-500 text-dark">74.24<sup>%</sup></span>
+                                                <!--<span class="display-3 fw-500 js-percent d-block text-dark">97.68</span>-->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-content p-0">
-                            <div class="col-12">
-                                <nav class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="nav-link shadow-1 p-1 btn-block btn-success bg-success-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-home-tab" data-toggle="pill" href="#realisasiTanam" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                                        <div class="">
-                                            <span class="small">Realisasi</span>
-                                            <h5 class="d-block l-h-n m-0 fw-500">
-                                                123.456.789 ha
-                                            </h5>
-                                        </div>
-                                        <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:3rem"></i>
-                                    </a>
-                                    <a class="nav-link  shadow-1 p-1 btn-block btn-primary bg-primary-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-profile-tab" data-toggle="pill" href="#verifikasiTanam" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                                        <div class="">
-                                            <span class="small">Verifikasi</span>
-                                            <h5 class="d-block l-h-n m-0 fw-500">
-                                                123.456.789 ha
-                                            </h5>
-                                        </div>
-                                        <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:3rem"></i>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div id="panel-2" class="panel" data-title="Judul panel" data-intro="Panel ini menampilkan ringkasan Judul Laporan. Berisi data Judul Laporan sebagai informasi tentang Judul Laporan" data-step="5">
-                    <div class="panel-hdr">
-                        <h2>
-                            panel title
-                        </h2>
-                        <div class="panel-toolbar">
-                            toolbar
-                        </div>
-                    </div>
-                    <div class="panel-container show border-bottom">
-                        <div class="panel-content">
-                            <div class="row">
-                                <div class="col-12 align-self-center text-center">
-                                    <div class="c-chart-wrapper">
-                                        <div class="js-easy-pie-chart color-warning-500 position-relative d-inline-flex align-items-center justify-content-center" data-percent="91.75" data-piesize="100" data-linewidth="5" data-scalelength="3">
-                                            <div class="fs-xl position-absolute pos-top pos-left pos-right pos-bottom d-flex align-items-center justify-content-center fw-700 text-dark">91.75%</div>
-                                        </div>
+                        <div class="col-lg-7 col-sm-6">
+                            <nav class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link shadow-1 p-1 btn-block btn-success bg-success-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-home-tab" data-toggle="pill" href="#realisasiTanam" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                                    <div class="">
+                                        <span class="small">Realisasi</span>
+                                        <h5 class="d-block l-h-n m-0 fw-500">
+                                            123.456.789 ha
+                                        </h5>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-content p-0">
-                            <div class="col-12">
-                                <nav class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <a class="nav-link shadow-1 p-1 btn-block btn-success bg-success-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-home-tab" data-toggle="pill" href="#realisasiTanam" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                                        <div class="">
-                                            <span class="small">Realisasi</span>
-                                            <h5 class="d-block l-h-n m-0 fw-500">
-                                                123.456.789 ha
-                                            </h5>
-                                        </div>
-                                        <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:3rem"></i>
-                                    </a>
-                                    <a class="nav-link  shadow-1 p-1 btn-block btn-primary bg-primary-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-profile-tab" data-toggle="pill" href="#verifikasiTanam" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                                        <div class="">
-                                            <span class="small">Verifikasi</span>
-                                            <h5 class="d-block l-h-n m-0 fw-500">
-                                                123.456.789 ha
-                                            </h5>
-                                        </div>
-                                        <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:3rem"></i>
-                                    </a>
-                                </nav>
-                            </div>
+                                    <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:3rem"></i>
+                                </a>
+                                <a class="nav-link  shadow-1 p-1 btn-block btn-primary bg-primary-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-profile-tab" data-toggle="pill" href="#verifikasiTanam" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                    <div class="">
+                                        <span class="small">Verifikasi</span>
+                                        <h5 class="d-block l-h-n m-0 fw-500">
+                                            123.456.789 ha
+                                        </h5>
+                                    </div>
+                                    <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:3rem"></i>
+                                </a>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-3 border-left">
-        <h5 class="fw-500"><i class="subheader-icon fal fa-envelope mr-1"></i>New Messages</h5>
-        <div id="panel-2" class="panel" data-title="Judul panel" data-intro="Panel ini menampilkan ringkasan Judul Laporan. Berisi data Judul Laporan sebagai informasi tentang Judul Laporan" data-step="6">
-            <!--
-				Yang ingin dicapi pada panel ini adalah:
-				
-				Menampilkan daftar percakapan/perpesanan/messages baru dan atau terakhir antara Administrator dengan Pengguna. Bersifat Private per user.
-			-->
-            <div class="panel-container show border-bottom">
-                <div class="panel-content p-0">
-                    <ul class="notification">
-                        <li class="unread">
-                            <a href="#" class="d-flex align-items-center">
-                                <span class="status mr-2">
-                                    <img src="/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="">
-                                </span>
-                                <span class="d-flex flex-column flex-1 ml-1">
-                                    <span class="name">Administrator <span class="badge badge-danger fw-n position-absolute pos-top pos-right mt-1">NEW</span></span>
-                                    <span class="msg-a fs-sm">Re: New security codes</span>
-                                    <span class="msg-b fs-xs">Hello again and thanks for being part...</span>
-                                    <span class="fs-nano text-muted mt-1">56 seconds ago</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="unread">
-                            <a href="#" class="d-flex align-items-center">
-                                <span class="status mr-2">
-                                    <img src="/img/demo/avatars/avatar-j.png" class="profile-image rounded-circle" alt="">
-                                </span>
-                                <span class="d-flex flex-column flex-1 ml-1">
-                                    <span class="name">Adison Lee (Verificator)</span>
-                                    <span class="msg-a fs-sm">Msed quia non numquam eius</span>
-                                    <span class="fs-nano text-muted mt-1">2 minutes ago</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="d-flex align-items-center">
-                                <span class="status status-success mr-2">
-                                    <img src="/img/demo/avatars/avatar-a.png" class="profile-image rounded-circle" alt="">
-                                </span>
-                                <span class="d-flex flex-column flex-1 ml-1">
-                                    <span class="name">Sarah McBrook</span>
-                                    <span class="msg-a fs-sm">Msed quia non numquam eius</span>
-                                    <span class="fs-nano text-muted mt-1">3 days ago</span>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="col-md-6">
+        <div class="panel" id="panel-2">
+            <div class="panel-hdr">
+                <h2>
+                    <i class="subheader-icon fal fa-seedling mr-1"></i>Wajib Produksi
+                </h2>
             </div>
             <div class="panel-container show">
                 <div class="panel-content">
-                    <button class="btn btn-block btn-primary btn-sm">button</button>
-                </div>
-            </div>
-        </div>
-        <h5 class="fw-500"><i class="subheader-icon fal fa-rss mr-1"></i>New Feeds</h5>
-        <div id="panel-1" class="panel" data-title="Judul panel" data-intro="Panel ini menampilkan ringkasan Judul Laporan. Berisi data Judul Laporan sebagai informasi tentang Judul Laporan" data-step="7">
-            <!--
-				Yang ingin dicapi pada panel ini adalah:
-				
-				Berita/Feed adalah informasi yang disampaikan oleh Administrator kepada seluruh pengguna sesuai role. bersifat Umum Terbatas.
-				Feed ditampilkan sesuai dengan role pengguna.
-				Fitur Pembuatan Berita/Feed pada halaman lainnya.
-			-->
-            <div class="panel-container show">
-                <div class="panel-content p-0">
-                    <div class="row no-gutters row-grid">
-                        <!-- thread -->
-                        <div class="col-12">
-                            <ul class="notification">
-                                <li class="unread">
-                                    <div class="p-3">
-                                        <div class="d-flex flex-column">
-                                            <div class="d-block">
-                                                <span class="name d-flex align-items-center">Administrator</span>
-                                            </div>
-                                            <a href="/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
-                                                Nam viverra diam magna, eget lobortis orci tincidunt sed<span class="badge badge-danger ml-auto"> <span class="hidden-md-down">New</span></span>
-                                            </a>
-                                            <div class="d-block text-muted fs-sm">
-                                                <span class="text-muted js-get-date"></span>
+                    <!-- Row -->
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-lg-5 col-sm-6 align-self-center text-center">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="realisasiProduksi" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                    <div class="c-chart-wrapper">
+                                        <div id="naschart" class="js-easy-pie-chart color-warning-500 position-relative d-inline-flex align-items-center justify-content-center" data-percent="75.74" data-piesize="145" data-linewidth="10" data-linecap="butt" data-scalelength="7" data-toggle="tooltip" title data-original-title="74,24% dari Kewajiban" data-placement="bottom">
+                                            <div class="d-flex flex-column align-items-center justify-content-center position-absolute pos-left pos-right pos-top pos-bottom fw-300 fs-xl">
+                                                <span class="fs-xxl fw-500 text-dark">74.24<sup>%</sup></span>
+                                                <!--<span class="display-3 fw-500 js-percent d-block text-dark">97.68</span>-->
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="p-3">
-                                        <div class="d-flex flex-column">
-                                            <div class="d-block">
-                                                <span class="name d-flex align-items-center">Administrator</span>
-                                            </div>
-                                            <a href="/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
-                                                Nam viverra diam magna, eget lobortis orci tincidunt sed<span class="badge badge-danger ml-auto"> <span class="hidden-md-down">New</span></span>
-                                            </a>
-                                            <div class="d-block text-muted fs-sm">
-                                                <span class="text-muted js-get-date"></span>
+                                </div>
+                                <div class="tab-pane fade" id="verifikasiProduksi" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <div class="c-chart-wrapper">
+                                        <div id="naschart" class="js-easy-pie-chart color-primary-500 position-relative d-inline-flex align-items-center justify-content-center" data-percent="75.74" data-piesize="145" data-linewidth="10" data-linecap="butt" data-scalelength="7" data-toggle="tooltip" title data-original-title="74,24% dari Kewajiban" data-placement="bottom">
+                                            <div class="d-flex flex-column align-items-center justify-content-center position-absolute pos-left pos-right pos-top pos-bottom fw-300 fs-xl">
+                                                <span class="fs-xxl fw-500 text-dark">74.24<sup>%</sup></span>
+                                                <!--<span class="display-3 fw-500 js-percent d-block text-dark">97.68</span>-->
                                             </div>
                                         </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="p-3">
-                                        <div class="d-flex flex-column">
-                                            <div class="d-block">
-                                                <span class="name d-flex align-items-center">Administrator</span>
-                                            </div>
-                                            <a href="/feeds/read" class="fs-lg fw-500 d-flex align-items-start">
-                                                Nam viverra diam magna, eget lobortis orci tincidunt sed<span class="badge badge-danger ml-auto"> <span class="hidden-md-down">New</span></span>
-                                            </a>
-                                            <div class="d-block text-muted fs-sm">
-                                                <span class="text-muted js-get-date"></span>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-sm-6">
+                            <nav class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link shadow-1 p-1 btn-block btn-warning bg-warning-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-home-tab" data-toggle="pill" href="#realisasiProduksi" role="tab" aria-controls="realisasiProduksi" aria-selected="true">
+                                    <div class="">
+                                        <span class="small">Realisasi</span>
+                                        <h5 class="d-block l-h-n m-0 fw-500">
+                                            123.456.789 ton
+                                        </h5>
                                     </div>
-                                </li>
-                            </ul>
+                                    <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-35 mb-n1 mr-n1" style="font-size:3rem"></i>
+                                </a>
+                                <a class="nav-link  shadow-1 p-1 btn-block btn-primary bg-primary-300 rounded overflow-hidden position-relative text-white mb-2 waves-effect waves-themed" id="v-pills-profile-tab" data-toggle="pill" href="#verifikasiProduksi" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                    <div class="">
+                                        <span class="small">Verifikasi</span>
+                                        <h5 class="d-block l-h-n m-0 fw-500">
+                                            123.456.789 ton
+                                        </h5>
+                                    </div>
+                                    <i class="fal fa-hand-holding-seedling position-absolute pos-right pos-bottom opacity-15 mb-n1 mr-n1" style="font-size:3rem"></i>
+                                </a>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- Tabel Verifikasi
+		Nilai Tabel chart ini diperoleh dari kueri data verifikasi dengan status mulai dari 0 s. d 5. Temporary tabel sesuai dengan tampilan pada layar html.
+		Setiap status merupakan pintasan cepat ke halaman terkait.
+	-->
+    <div class="col-md-12">
+        <div class="panel" id="panel-2">
+            <div class="panel-hdr">
+                <h2>
+                    <i class="subheader-icon fal fa-ballot-check mr-1"></i>Verification <span class="fw-300"><i>Tasks</i></span>
+                </h2>
+                <div class="panel-toolbar">
+                    @include('partials.globaltoolbar')
+                </div>
+            </div>
             <div class="panel-container show">
                 <div class="panel-content">
-                    <button class="btn btn-block btn-primary btn-sm">button</button>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="shadow-1 p-2 bg-primary-100 rounded overflow-hidden position-relative text-white mb-2">
+                                <div class="">
+                                    <h5 class="d-block l-h-n m-0 fw-500">
+                                        123.456.789 ha
+                                    </h5>
+                                    <span class="small">Pengajuan</span>
+                                </div>
+                                <i class="fal fa-download position-absolute pos-right pos-bottom opacity-30 mb-n1 mr-n1" style="font-size:3rem"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="shadow-1 p-2 bg-primary-200 rounded overflow-hidden position-relative text-white mb-2">
+                                <div class="">
+                                    <h5 class="d-block l-h-n m-0 fw-500">
+                                        123.456.789 ha
+                                    </h5>
+                                    <span class="small">Diverifikasi</span>
+                                </div>
+                                <i class="fal fa-hourglass position-absolute pos-right pos-bottom opacity-30 mb-n1 mr-n1" style="font-size:3rem"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="shadow-1 p-2 bg-primary-300 rounded overflow-hidden position-relative text-white mb-2">
+                                <div class="">
+                                    <h5 class="d-block l-h-n m-0 fw-500">
+                                        123.456.789 ha
+                                    </h5>
+                                    <span class="small">Terverifikasi</span>
+                                </div>
+                                <i class="fal fa-check-circle position-absolute pos-right pos-bottom opacity-30 mb-n1 mr-n1" style="font-size:3rem"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="shadow-1 p-2 bg-primary-400 rounded overflow-hidden position-relative text-white mb-2">
+                                <div class="">
+                                    <h5 class="d-block l-h-n m-0 fw-500">
+                                        123.456.789 ha
+                                    </h5>
+                                    <span class="small">Lunas</span>
+                                </div>
+                                <i class="fal fa-award position-absolute pos-right pos-bottom opacity-30 mb-n1 mr-n1" style="font-size:3rem"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <table id="sum_verif" class="table table-bordered table-hover table-sm w-100 dataTable">
+                        <thead class="bg-gradient text-white text-center fw-500">
+                            <tr>
+                                <th rowspan="2">Perusahaan</th>
+                                <th rowspan="2">Nomor RIPH</th>
+                                <th colspan="2">Tahap 1 <sup>(Lapangan)</sup></th>
+                                <th rowspan="2">Tahap 2 <sup>(Online)</sup></th>
+                                <th rowspan="2">Tahap 3 <sup>SKL</sup></th>
+                                <th rowspan="2">Status</th>
+                            </tr>
+                            <tr>
+                                <th>Tanam</th>
+                                <th>Produksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td class="text-left">PT. Bawang Nusantara</td>
+                                <td>xxxx/PP.240/D/MM/YYY</td>
+                                <td><a class="badge btn-sm btn-info" href="/verifikasi/onfarm">Submitted</a></td>
+                                <td><a class="badge btn-sm btn-info" href="/verifikasi/onfarm">Submitted</a></td>
+                                <td><a class="badge btn-sm btn-info" href="/verifikasi/online">Submitted</a></td>
+                                <td><a class="badge btn-sm btn-default">No Status</a></td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">PT. Bawang Nusantara</td>
+                                <td>xxxx/PP.240/D/MM/YYY</td>
+                                <td><a class="badge btn-sm btn-warning" href="/verifikasi/onfarm">On progress</a></td>
+                                <td><a class="badge btn-sm btn-info" href="/verifikasi/onfarm">Submitted</a></td>
+                                <td><a class="badge btn-sm btn-info" href="/verifikasi/online">Submitted</a></td>
+                                <td><a class="badge btn-sm btn-default">No Status</a></td>
+                                <td>Verifying</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">PT. Bawang Nusantara</td>
+                                <td>xxxx/PP.240/D/MM/YYY</td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-warning" href="/verifikasi/onfarm">On progress</a></td>
+                                <td><a class="badge btn-sm btn-info" href="/verifikasi/online">Submitted</a></td>
+                                <td><a class="badge btn-sm btn-default">No Status</a></td>
+                                <td>Verifying</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">PT. Bawang Nusantara</td>
+                                <td>xxxx/PP.240/D/MM/YYY</td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-danger" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-warning" href="/verifikasi/online">On progress</a></td>
+                                <td><a class="badge btn-sm btn-default">No Status</a></td>
+                                <td>Verifying</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">PT. Bawang Nusantara</td>
+                                <td>xxxx/PP.240/D/MM/YYY</td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/online">Verified</a></td>
+                                <td><a class="badge btn-sm btn-info" href="/verifikasi/lunas_check">Submitted</a></td>
+                                <td>Verifying</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">PT. Bawang Nusantara</td>
+                                <td>xxxx/PP.240/D/MM/YYY</td>
+                                <td><a class="badge btn-sm btn-danger" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/online">Verified</a></td>
+                                <td><a class="badge btn-sm btn-danger" href="/verifikasi/lunas_check">Rejected</a></td>
+                                <td>Verifying</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">PT. Bawang Nusantara</td>
+                                <td>xxxx/PP.240/D/MM/YYY</td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/onfarm">Verified</a></td>
+                                <td><a class="badge btn-sm btn-success" href="/verifikasi/online">Verified</a></td>
+                                <td><a class="badge btn-sm btn-success" href="/skl/skl">Accomplished</a></td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -335,120 +355,101 @@
 <!-- @parent -->
 @section('scripts')
 <!-- start script for this page -->
+<script src="{{ asset('/js/statistics/easypiechart/easypiechart.bundle.js') }}"></script>
+<script src="{{ asset('/js/datagrid/datatables/datatables.bundle.js') }}"></script>
+<script src="{{ asset('/js/datagrid/datatables/datatables.export.js') }}"></script>
+
 <script>
     $(document).ready(function() {
-        var barTW = c3.generate({
-            bindto: "#tw1234",
-            data: {
-                columns: [
-                    ['TW1', 100],
-                    ['TW2', 105],
-                    ['TW3', 97],
-                    ['TW4', 108]
-                ],
-
-                type: 'bar'
-            },
-            legend: {
-                show: true
-            },
-            color: {
-                pattern: ['#886ab5', '#2196F3', '#1dc9b7', '#ffc241']
-            },
-            axis: {
-                x: {
-                    type: 'category',
-                    categories: ['1771', '1772', '1773', '1774']
-                },
-                y: {
-                    show: true
-                }
-            },
-            bar: {
-                width: {
-                    ratio: 0.8 // this makes bar width 50% of length between ticks
-                },
-                space: 0.25
-                // or
-                //width: 100 // this makes bar width 100px
-            }
+        $('#a').dataTable({
+            responsive: true,
+            pageLength: 10,
+            order: [
+                [0, 'asc']
+            ]
         });
-
-
-        $('a[data-toggle=tab]').on('shown.bs.tab', function() {
-            barTW.flush();
-        });
-    })
+    });
 </script>
 
 <script>
-    var flotArea = $.plot($('#flot-area'), [{
-            data: dataSet1,
-            label: 'New Customer',
-            color: color.success._200
-        },
-        {
-            data: dataSet2,
-            label: 'Returning Customer',
-            color: color.info._200
-        }
-    ], {
-        series: {
-            lines: {
-                show: true,
-                lineWidth: 2,
-                fill: true,
-                fillColor: {
-                    colors: [{
-                            opacity: 0
-                        },
-                        {
-                            opacity: 0.5
-                        }
-                    ]
+    $(document).ready(function() {
+
+        // initialize datatable
+        $('#sum_verif').dataTable({
+            processing: true,
+            serverside: true,
+            pagingType: 'full_numbers',
+            responsive: true,
+            lengthChange: false,
+            pageLength: 10,
+            order: [
+                [0, 'asc']
+            ],
+            dom:
+                /*	--- Layout Structure 
+                	--- Options
+                	l	-	length changing input control
+                	f	-	filtering input
+                	t	-	The table!
+                	i	-	Table information summary
+                	p	-	pagination control
+                	r	-	processing display element
+                	B	-	buttons
+                	R	-	ColReorder
+                	S	-	Select
+
+                	--- Markup
+                	< and >				- div element
+                	<"class" and >		- div with a class
+                	<"#id" and >		- div with an ID
+                	<"#id.class" and >	- div with an ID and a class
+
+                	--- Further reading
+                	https://datatables.net/reference/option/dom
+                	--------------------------------------
+                 */
+                "<'row mb-3'<'col-sm-12 col-md-6 d-flex align-items-center justify-content-start'f><'col-sm-12 col-md-6 d-flex align-items-center justify-content-end'lB>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+            buttons: [{
+                    extend: 'colvis',
+                    text: 'Visibility',
+                    titleAttr: 'Col visibility',
+                    className: 'btn-outline-info btn-xs mr-sm-3 ml-5'
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: 'PDF',
+                    titleAttr: 'Generate PDF',
+                    className: 'btn-outline-danger btn-xs mr-1'
+                },
+                {
+                    extend: 'excelHtml5',
+                    text: 'Excel',
+                    titleAttr: 'Generate Excel',
+                    className: 'btn-outline-success btn-xs mr-1'
+                },
+                /*{
+                	extend: 'csvHtml5',
+                	text: 'CSV',
+                	titleAttr: 'Generate CSV',
+                	className: 'btn-outline-primary btn-xs mr-1'
+                },*/
+                /*{
+                	extend: 'copyHtml5',
+                	text: 'Copy',
+                	titleAttr: 'Copy to clipboard',
+                	className: 'btn-outline-primary btn-xs mr-1'
+                },*/
+                {
+                    extend: 'print',
+                    text: 'Print',
+                    titleAttr: 'Print Table',
+                    className: 'btn-outline-primary btn-xs'
                 }
-            },
-            shadowSize: 0
-        },
-        points: {
-            show: true,
-        },
-        legend: {
-            noColumns: 1,
-            position: 'nw'
-        },
-        grid: {
-            hoverable: true,
-            clickable: true,
-            borderColor: '#ddd',
-            tickColor: 'rgba(0,0,0,0.05)',
-            aboveData: true,
-            borderWidth: 0,
-            labelMargin: 5,
-            backgroundColor: 'transparent'
-        },
-        yaxis: {
-            tickLength: 1,
-            min: 0,
-            max: 15,
-            color: '#eee',
-            tickColor: 'rgba(0,0,0,0.05)',
-            font: {
-                size: 0,
-                color: '#999'
-            }
-        },
-        xaxis: {
-            tickLength: 1,
-            color: '#eee',
-            tickColor: 'rgba(0,0,0,0.05)',
-            font: {
-                size: 10,
-                color: '#999'
-            }
-        }
+            ]
+        });
 
     });
-    /* flot area -- end */
 </script>
 @endsection

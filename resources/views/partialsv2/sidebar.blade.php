@@ -43,38 +43,38 @@
                     <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
                 </a>
             </li>
-            <li class="{{ request()->is('v2/dashboard') | request()->is('v2/pemetaan') ? 'active' : '' }}">
+            <li class="{{ request()->is('v2/dashboard*') | request()->is('v2/pemetaan*') ? 'active' : '' }}">
                 <a href="javascript:void(0);" title="Dashboard" data-filter-tags="dashboard">
                     <i class="fal fa-analytics"></i>
                     <span class="nav-link-text" data-i18n="nav.dashboard">Dashboard</span>
                 </a>
                 <ul>
-                    <li class="{{ request()->is('v2/dashboard') ? 'active' : '' }}">
-                        <a href="dashboard" title="Dashboard" data-filter-tags="dashboard">
+                    <li class="{{ request()->is('v2/dashboard*') ? 'active' : '' }}">
+                        <a href="/v2/dashboard/user" title="Dashboard" data-filter-tags="dashboard">
                             <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('v2/pemetaan') ? 'active' : '' }}">
-                        <a href="pemetaan" title="Pemetaan" data-filter-tags="dashboard pemetaan">
+                    <li class="{{ request()->is('v2/pemetaan*') ? 'active' : '' }}">
+                        <a href="/v2/pemetaan/user" title="Pemetaan" data-filter-tags="dashboard pemetaan">
                             <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Pemetaan</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-title">User Tasks</li>
-            <li class="{{ request()->is('v2/riphlist*') ? 'active' : '' }}">
-                <a href="/v2/riphlist" title="Data RIPH" data-filter-tags="riph">
+            <li class="{{ request()->is('v2/commitment*') ? 'active' : '' }}">
+                <a href="/v2/commitment" title="Data RIPH" data-filter-tags="riph">
                     <i class="fal fa-ballot"></i>
-                    <span class="nav-link-text" data-i18n="nav.riph_list">Pelaporan Komitmen</span>
+                    <span class="nav-link-text" data-i18n="nav.commitment">Pelaporan Komitmen</span>
                 </a>
             </li>
             <li class="{{ request()->is('v2/kelompoktani*') ? 'active' : '' }}">
                 <a href="/v2/kelompoktani" title="Kelompoktani" data-filter-tags="kelompoktani">
                     <i class="fal fa-users"></i>
-                    <span class="nav-link-text" data-i18n="nav.riph_list">Kelompoktani</span>
+                    <span class="nav-link-text" data-i18n="nav.kelompoktani">Kelompoktani</span>
                 </a>
             </li>
-            <li class="{{ request()->is('v2/pengajuan') | request()->is('v2/skl') ? 'active' : '' }}">
+            <li class="{{ request()->is('v2/pengajuan') | request()->is('v2/userskl') ? 'active' : '' }}">
                 <a href="javascript:void(0);" title="Daftar Pengajuan" data-filter-tags="Pengajuan Verifikasi SKL">
                     <i class="fal fa-ballot-check"></i>
                     <span class="nav-link-text" data-i18n="nav.pengajuan">Daftar Verifikasi</span>
@@ -85,8 +85,8 @@
                             <span class="nav-link-text" data-i18n="nav.list_pengajuan">Daftar Pengajuan</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('v2/skl') ? 'active' : '' }}">
-                        <a href="/v2/skl" title="Daftar SKL" data-filter-tags="daftar skl lunas">
+                    <li class="{{ request()->is('v2/userskl') ? 'active' : '' }}">
+                        <a href="/v2/userskl" title="Daftar SKL" data-filter-tags="daftar skl lunas">
                             <span class="nav-link-text" data-i18n="nav.list_skl">Daftar SKL</span>
                         </a>
                     </li>
@@ -105,12 +105,12 @@
                     </li>
                     <li class="{{ request()->is('v2/files/mygalleries') ? 'active' : '' }}">
                         <a href="/v2/files/mygalleries" title="Galeri" data-filter-tags="foto unggah">
-                            <span class="nav-link-text" data-i18n="nav.list_skl">Galeri Saya</span>
+                            <span class="nav-link-text" data-i18n="nav.mygalleries">Galeri Saya</span>
                         </a>
                     </li>
                     <li class="{{ request()->is('v2/files/templates') ? 'active' : '' }}">
                         <a href="/v2/files/templates" title="Master Templates" data-filter-tags="master templat contoh dokumen berkas">
-                            <span class="nav-link-text" data-i18n="nav.list_skl">Templat Master</span>
+                            <span class="nav-link-text" data-i18n="nav.templates">Templat Master</span>
                         </a>
                     </li>
                 </ul>
@@ -126,6 +126,7 @@
                 <a href="/v2/messenger" title="Messenger" data-filter-tags="messages pesan mail messenger">
                     <i class="fal fa-mailbox"></i>
                     <span class="nav-link-text" data-i18n="nav.messenger">Messenger</span>
+                    <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 new</span>
                 </a>
             </li>
             <li class="nav-title">Documentations</li>
