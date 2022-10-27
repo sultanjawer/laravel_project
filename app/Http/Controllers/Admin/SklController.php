@@ -109,9 +109,9 @@ class SklController extends Controller
     {
         $pagedata = array(
             'controller' => 'SKL',
-            'pagetitles' => 'Create New',
-            'subtitles' => 'SKL Form',
-            'emphs' => 'Terbitkan Surat Keterangan Baru',
+            'pagetitles' => 'Update SKL',
+            'subtitles' => 'Data',
+            'emphs' => 'Ubah data Surat Keterangan Baru',
             'alerttitle' => 'Alert/information Title', //make it uppercase
             'alertcontent' => 'Alert/information should appear in here.',
         );

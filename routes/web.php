@@ -72,6 +72,9 @@ Route::get('pullsync/fail', [PullsyncController::class, 'fail'])->name('pullsync
 //v3 Commitments (RIPH)
 Route::get('commitment', [CommitmentController::class, 'index'])->name('commitment');
 Route::get('commitment/detail', [CommitmentController::class, 'detail'])->name('commitment.detail');
+Route::get('commitment/master', [CommitmentController::class, 'master'])->name('commitment.master');
+Route::get('commitment/master/create', [CommitmentController::class, 'create'])->name('commitment.master.create');
+Route::get('commitment/master/show', [CommitmentController::class, 'show'])->name('commitment.master.show');
 
 // v3 pks-rencana tanam crud
 Route::get('pks', [PksController::class, 'index'])->name('pks');
@@ -143,8 +146,6 @@ Route::get('verification/skl', [VerificationController::class, 'skl'])->name('ve
 Route::get('verification/skl/check', [VerificationController::class, 'skl_check'])->name('verification.skl.check');
 Route::get('verification/skl/success', [VerificationController::class, 'skl_success'])->name('verification.skl.success');
 Route::get('verification/skl/postponed', [VerificationController::class, 'skl_postponed'])->name('verification.skl.postponed');
-
-Route::get('verification/completed', [VerificationController::class, 'completed'])->name('verification.completed');
 
 //Assets Management
 Route::get('asset', [AssetController::class, 'index'])->name('asset');

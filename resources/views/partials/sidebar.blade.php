@@ -209,13 +209,6 @@
                     <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 request</span>
                 </a>
             </li>
-            <li class="">
-                <a href="/verification/complete" title="on line verification" data-filter-tags="on line verification">
-                    <i class="fal fa-file-certificate"></i>
-                    <span class="nav-link-text" data-i18n="nav.online_verification">Completed</span>
-                    <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">5 New SKL</span>
-                </a>
-            </li>
             <!-- Administrator Tasks
                 Q: Siapa yang dapat mengakses menu ini?
                 A: Administrator
@@ -248,6 +241,12 @@
                     </li>
                 </ul>
             </li>
+            <li class="{{ request()->is('commitment/master') ? 'active' : '' }}">
+                <a href="/commitment/master" title="Master Data RIPH" data-filter-tags="master data riph">
+                    <i class="fab fa-stack-overflow"></i>
+                    <span class="nav-link-text" data-i18n="nav.home">Master Data RIPH</span>
+                </a>
+            </li>
             <li class="{{ request()->is('beranda') ? 'active' : '' }}">
                 <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
                     <i class="fal fa-home"></i>
@@ -278,20 +277,15 @@
                     <span class="nav-link-text" data-i18n="nav.skl">SKL</span>
                 </a>
                 <ul>
-                    <li class="{{ request()->is('verification/skl*') ? 'active' : '' }}">
+                    <li class="{{ request()->is('verification/skl') ? 'active' : '' }}">
                         <a href="/verification/skl" title="on line verification" data-filter-tags="on line verification">
                             <span class="nav-link-text" data-i18n="nav.online_verification">SKL</span>
                             <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 request</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('verification/skl/create') ? 'active' : '' }}">
-                        <a href="/verification/skl/create" title="SKL Issued" data-filter-tags="penerbitan skl surat keterangan lunas">
+                    <li class="{{ request()->is('skl/create') ? 'active' : '' }}">
+                        <a href="/skl/create" title="SKL Issued" data-filter-tags="penerbitan skl surat keterangan lunas">
                             <span class="nav-link-text" data-i18n="nav.skl_create">Create SKL</span>
-                        </a>
-                    </li>
-                    <li class="{{ request()->is('verification/skl/issued') ? 'active' : '' }}">
-                        <a href="/verification/skl" title="SKL Issued" data-filter-tags="skl surat keterangan lunas diterbitkan">
-                            <span class="nav-link-text" data-i18n="nav.skl_issued">SKL Issued</span>
                         </a>
                     </li>
                 </ul>

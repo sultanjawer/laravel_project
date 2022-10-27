@@ -203,19 +203,4 @@ class VerificationController extends Controller
         $breadcrumbs = ['Simethris', 'Verification', 'SKL']; //add as much array item as needed
         return view('admin.verification.skl_postponed', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
     }
-
-    public function completed()
-    {
-        $pagedata = array(
-            'controller' => 'Verification',
-            'pagetitles' => 'Completed',
-            'subtitles' => 'Verification',
-            'emphs' => 'Daftar Verifikasi yang telah selesai dilaksanakan.',
-            'alerttitle' => 'Alert/information Title', //make it uppercase
-            'alertcontent' => 'Alert/information should appear in here.',
-        );
-        $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
-        $breadcrumbs = ['Simethris', 'Verification', 'Completed']; //add as much array item as needed
-        return view('admin.verification.completed', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
-    }
 }

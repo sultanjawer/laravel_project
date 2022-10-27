@@ -553,10 +553,6 @@
                                 <div class="input-group-append">
                                     <a class="btn btn-sm btn-danger" href="/verifikasi" role="button"><i class="fal fa-times text-align-center mr-1"></i> Batalkan</a>
                                 </div>
-                                <!--
-									Yang ingin dicapai pada tombol TERBITKAN ini adalah:
-									status RIPH menjadi TERBIT, men-generate SKL untuk dicetak sebagai Cetakan Asli
-								-->
                                 <div class="input-group-append">
                                     <a href="/verification/skl/postponed" class="btn btn-sm btn-primary" role="button" type="submit">
                                         <i class="fas fa-file-certificate text-align-center mr-1"></i> Terbitkan

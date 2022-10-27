@@ -7,65 +7,11 @@
 <div class="" data-title="System Alert" data-intro="Ini adalah Panel yang berisi informasi atau pemberitahuan penting untuk Anda." data-step="1">@include('partials.sysalert')</div>
 <form id="js-login" novalidate="" action="">
     <div class="row">
-        <div class="col-md-4">
-            <div class="panel" id="panel-1">
-                <div class="panel-hdr">
-                    <h2>
-                        DATA <span class="fw-300"><i>Kelompoktani</i></span>
-                    </h2>
-                    <div class="panel-toolbar">
-
-                    </div>
-                </div>
-                <div class="panel-container show">
-                    <div class="panel-content">
-                        <ul class="list-group mb-3">
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <span class="text-muted">Kelompoktani Mitra</span>
-                                    <h6 class="fw-500 my-0">API Nama Kelompoktani</h6>
-                                </div>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <span class="text-muted">Kecamatan</span>
-                                    <h6 class="fw-500 my-0">API Kecamatan</h6>
-                                </div>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <span class="text-muted">Desa/Kel</span>
-                                    <h6 class="fw-500 my-0">API Desa</h6>
-                                </div>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <span class="text-muted">Jumlah Anggota</span>
-                                    <h6 class="fw-500 my-0">API</h6>
-                                </div>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <span class="text-muted">Luas Garapan</span>
-                                    <h6 class="fw-500 my-0">API <sup>ha</sup></h6>
-                                </div>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <div>
-                                    <span class="text-muted">Periode Tanam</span>
-                                    <h6 class="fw-500 my-0">API</h6>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="panel" id="panel-2">
                 <div class="panel-hdr">
                     <h2>
-                        Data Isian <span class="fw-300"><i>PKS/Rencana Tanam</i></span>
+                        Form Isian <span class="fw-300"><i>SKL Manual</i></span>
                     </h2>
                     <div class="panel-toolbar">
 
@@ -81,194 +27,164 @@
                             </div>
                         </div>
                         <div class="flex-1">
-                            <span>Lengkapi kolom-kolom isian berikut sesuai dengan yang tercantum dalam Dokumen Perjanjian Kerjasama antara Pihak Pelaku Usaha dengan Kelompoktani Binaan pada panel Data Kelompoktani di sebelah kiri.</span>
+                            <span>Lengkapi kolom-kolom isian berikut sesuai data yang Anda miliki.</span>
                         </div>
                     </div>
                 </div>
                 <div class="panel-container show">
                     <div class="panel-content">
-                        <!-- add "was-validated" to create validation form style-->
-                        <div class="row d-flex">
-                            <div class="col-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="simpleinputInvalid">Nomor Perjanjian</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend3">123</span>
-                                        </div>
-                                        <input type="text" class="form-control " id="simpleinputInvalid" required>
-                                    </div>
-                                    <div class="help-block">
-                                        Masukkan nomor Surat Perjanjian Kerjasama dengan Kelompoktani Mitra.
-                                    </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="form-label" for="provinsi">Nomor RIPH</label>
+                                <div class="input-group">
+                                    <select class="selectRiph form-control" id="selectRiph" required>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                                <div class="help-block">
+                                    Pilih No. RIPH yang akan diterbitkan SKL.
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label">Tanggal perjanjian</label>
-                                    <div class="input-daterange input-group" id="datepickerstart">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fal fa-calendar-day"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control " name="start" required>
-                                    </div>
-                                    <div class="help-block">
-                                        Pilih Tanggal perjanjian ditandatangani.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label">Tanggal berakhir perjanjian</label>
-                                    <div class="input-daterange input-group" id="datepickerend">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fal fa-calendar-day"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control " name="end" required>
-                                    </div>
-                                    <div class="help-block">
-                                        Pilih Tanggal berakhirnya perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="simpleinputInvalid">Jumlah Anggota</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend3">
-                                                <i class="fal fa-users"></i>
-                                            </span>
-                                        </div>
-                                        <input type="number" class="form-control " id="simpleinputInvalid" required>
-                                    </div>
-                                    <div class="help-block">
-                                        Jumlah Anggota sesuai dokumen perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="simpleinputInvalid">Luas Rencana</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend3"><i class="fal fa-ruler"></i></span>
-                                        </div>
-                                        <input type="number" class="form-control " id="simpleinputInvalid" required>
-                                    </div>
-                                    <div class="help-block">
-                                        Jumlah Luas total sesuai dokumen perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="varietas">Varietas Tanam</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="varietas"><i class="fal fa-seedling"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control " id="varietas" required>
-                                    </div>
-                                    <div class="help-block">
-                                        Varietas ditanam sesuai dokumen perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="periode">Periode Tanam</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="varietas"><i class="fal fa-calendar-week"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control " id="periode" required>
-                                    </div>
-                                    <div class="help-block">
-                                        Periode tanam sesuai dokumen perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="provinsi">Provinsi</label>
-                                    <div class="input-group">
-                                        <select class="select2-prov form-control" id="provinsi" required>
-                                            <option></option>
-                                            <option></option>
-                                            <option></option>
-                                        </select>
-                                    </div>
-                                    <div class="help-block">
-                                        Provinsi tempat terjadinya perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="kabupaten">Kabupaten/Kota</label>
-                                    <div class="input-group">
-                                        <select class="select2-kab form-control" id="kabupaten" required>
-                                            <option></option>
-                                            <option></option>
-                                            <option></option>
-                                        </select>
-                                    </div>
-                                    <div class="help-block">
-                                        Pilih Kabupaten tempat terjadinya perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="kecamatan">Kecamatan</label>
-                                    <div class="input-group">
-                                        <select class="select2-kec form-control" id="kecamatan" required>
-                                            <option></option>
-                                            <option></option>
-                                            <option></option>
-                                        </select>
-                                    </div>
-                                    <div class="help-block">
-                                        Pilih Kecamatan tempat terjadinya perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <div class="form-group">
-                                    <label class="form-label" for="desa">Desa</label>
-                                    <div class="input-group">
-                                        <select class="select2-des form-control" id="desa" required>
-                                            <option></option>
-                                            <option></option>
-                                            <option></option>
-                                        </select>
-                                    </div>
-                                    <div class="help-block">
-                                        Pilih Desa tempat terjadinya perjanjian.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <label class="form-label">Unggah Berkas PKS (Perjanjian Kerjasama</label>
+                            <div class="form-group col-md-4">
+                                <label class="form-label" for="tgl_terbit">Tanggal Status/Terbit</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupPrepend3">PKS</span>
+                                        <span class="input-group-text"><i class="fal fa-calendar-alt"></i></span>
                                     </div>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="pksFile" required>
-                                        <label class="custom-file-label" for="pksFile">Choose file...</label>
+                                    <input type="text" class="form-control form-control-sm" aria-label="Tanggal akhir pelaksanaan pemeriksaan" id="tgl_terbit" placeholder="tanggal status/terbit">
+                                </div>
+                                <span class="help-block">Tanggal ditetapkan atau tanggal terbit Surat Keterangan Lunas (SKL).</span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label" for="no_skl">Nomor Penerbitan</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fal fa-file-invoice"></i></span>
+                                    </div>
+                                    <input id="no_skl" type="text" class="font-weight-bold form-control form-control-sm" placeholder="Nomor Surat" />
+                                </div>
+                                <span class="help-block">Nomor Surat Keterangan Lunas.</span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="form-label" for="wajib_tanam">Wajib Tanam (ha)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fal fa-ruler"></i></span>
+                                    </div>
+                                    <input id="wajib_tanam" type="number" class="font-weight-bold form-control form-control-sm" placeholder="luas wajib tanam" required />
+                                </div>
+                                <span class="help-block">Luas Wajib Tanam (dalam satuan hektar) berdasarkan volume import.</span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="form-label" for="real_tanam">Realisasi Tanam (ha)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fal fa-ruler-combined"></i></span>
+                                    </div>
+                                    <input id="real_tanam" type="number" class="font-weight-bold form-control form-control-sm" placeholder="luas realisasi tanam" required />
+                                </div>
+                                <span class="help-block">Luas tanam yang direalisasikan dalam satuan hektar.</span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="form-label" for="wajib_produksi">Wajib Produksi (ton)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fal fa-weight-hanging"></i></span>
+                                    </div>
+                                    <input id="wajib_produksi" type="number" class="font-weight-bold form-control form-control-sm" placeholder="volume wajib produksi" required />
+                                </div>
+                                <span class="help-block">Volume Wajib Produksi (dalam satuan ton) berdasarkan volume import.</span>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="form-label" for="realisasi_produksi">Realisasi Produksi (ton)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fal fa-balance-scale"></i></span>
+                                    </div>
+                                    <input id="realisasi_produksi" type="number" class="font-weight-bold form-control form-control-sm" placeholder="volume realisasi produksi" required />
+                                </div>
+                                <span class="help-block">Volume Produksi (dalam satuan ton) yang direalisasikan.</span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label" for="signed_by">Pejabat Penandatangan</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+                                    </div>
+                                    <select type="text" id="signed_by" class="form-control form-control-sm" placeholder="status..." aria-label="signed_by" aria-describedby="signed_by">
+                                        <option hidden>- pilih</option>
+                                        <option disabled></option>
+                                        <option>Nama - NIP</option> <!-- default adalah direktur yang sedang menjabat -->
+                                        <option>Nama - NIP</option>
+                                        <option disabled></option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Pejabat yang berwenang menandatangani.</span>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="form-label" for="sign_method">Metode Tandatangan</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fal fa-signature"></i></span>
+                                    </div>
+                                    <select type="text" id="sign_method" class="form-control form-control-sm" placeholder="status..." aria-label="sign_method" aria-describedby="sign_method">
+                                        <option hidden>- pilih</option>
+                                        <option disabled></option>
+                                        <option>Digital Sign</option> <!-- default adalah direktur yang sedang menjabat -->
+                                        <option>Manual</option>
+                                        <option disabled></option>
+                                    </select>
+                                </div>
+                                <span class="help-block">Pejabat yang berwenang menandatangani.</span>
+                            </div>
+                            <div class="col-md-4 d-flex p-1 mt-1">
+                                <div class="form-group mr-1">
+                                    <label class="form-label" for="qrcode"> </label>
+                                    <div id="qrcode" class="input-group" data-toggle="tooltip" data-offset="0" data-original-title="Generate QR Code">
+                                        <button class="btn btn-sm btn-info btn waves-effect waves-themed" role="button"><i class="fal fa-file-certificate mr-1"></i>Generate QR Code</button>
                                     </div>
                                 </div>
-                                <div class="help-block">Unggah hasil pemindaian berkas Form-5 dalam bentuk pdf. Ukuran berkas tidak lebih dari 2 megabytes.</div>
+                                <div class="form-group">
+                                    <!--
+									Yang ingin dicapai pada tombol Cetak Draft ini adalah:
+									men-generate Draft SKL untuk Diperiksa dan ditandangani secara Manual/Offline jika tandatangan dilakukan secara manual. Tombol ini tidak merubah status menjadi TERBIT
+								-->
+                                    <label class="form-label" for="print_draft"> </label>
+                                    <div id="print_draft" class="input-group" data-toggle="tooltip" data-offset="0" data-original-title="Cetak Draft untuk ditandatangani">
+                                        <a href="/skl/lunas" class="btn btn-sm btn-warning btn waves-effect waves-themed" role="button"><i class="fal fa-print mr-1"></i>Cetak Draft</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label" for="file_verif">Unggah SKL Tercetak</label>
+                                <div class="custom-file input-group input-group-sm">
+                                    <input type="file" class="custom-file-input form-control" id="file_verif">
+                                    <label class="custom-file-label" for="file_verif">Pilih berkas...</label>
+                                </div>
+                                <span class="help-block">Unggah berkas SKL yang telah dicetak dan ditandatangani oleh Pejabat terkait.</span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label" for="confirm">Konfirmasi</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control " placeholder="type your username here">
+                                    <div class="input-group-append">
+                                        <a class="btn btn-sm btn-danger" href="/verifikasi" role="button"><i class="fal fa-times text-align-center mr-1"></i> Batalkan</a>
+                                    </div>
+                                    <!--
+									Yang ingin dicapai pada tombol TERBITKAN ini adalah:
+									status RIPH menjadi TERBIT, men-generate SKL untuk dicetak sebagai Cetakan Asli
+								-->
+                                    <div class="input-group-append">
+                                        <a href="/verification/skl/success" class="btn btn-sm btn-primary" role="button" type="submit">
+                                            <i class="fas fa-file-certificate text-align-center mr-1"></i> Terbitkan
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="help-block">Pastikan Anda menekan tombol bukan karena ketidak-sengajaan.</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="col-md-4 ml-auto text-right">
-                        <a href="/commitment/detail" class="btn btn-warning btn-sm mt-3">Cancel</a>
-                        <button id="js-login-btn" type="submit" class="btn btn-primary btn-sm mt-3">Submit</button>
                     </div>
                 </div>
             </div>
@@ -287,8 +203,8 @@
 <script>
     $(document).ready(function() {
         $(function() {
-            $(".select2-prov").select2({
-                placeholder: "Select Province"
+            $(".selectRiph").select2({
+                placeholder: "Select #RIPH"
             });
             $(".select2-kab").select2({
                 placeholder: "Select Kabupaten"
