@@ -54,7 +54,7 @@
                         Files <span class="fw-300"></span>
                     </h2>
                     <div class="panel-toolbar">
-                        @include('partials.globaltoolbar')
+                        @include('partialsv2.globaltoolbar')
                     </div>
                 </div>
                 <div class="panel-container show">
@@ -88,7 +88,7 @@
                         Your Company Information <span class="fw-300"></span>
                     </h2>
                     <div class="panel-toolbar">
-                        @include('partials.globaltoolbar')
+                        @include('partialsv2.globaltoolbar')
                     </div>
                 </div>
                 <div class="panel-container show">
@@ -128,7 +128,7 @@
                         Company Address
                     </h2>
                     <div class="panel-toolbar">
-                        @include('partials.globaltoolbar')
+                        @include('partialsv2.globaltoolbar')
                     </div>
                 </div>
                 <div class="panel-container show">
@@ -195,7 +195,7 @@
                         Contact Information
                     </h2>
                     <div class="panel-toolbar">
-                        @include('partials.globaltoolbar')
+                        @include('partialsv2.globaltoolbar')
                     </div>
                 </div>
                 <div class="panel-container show">
@@ -228,10 +228,10 @@
             <div id="panel-6" class="panel" data-title="Panel Data" data-intro="Panel ini berisi data-data" data-step="2">
                 <div class="panel-hdr">
                     <h2>
-                        User Information & Credentials <span class="fw-300"></span>
+                        User Information
                     </h2>
                     <div class="panel-toolbar">
-                        @include('partials.globaltoolbar')
+                        @include('partialsv2.globaltoolbar')
                     </div>
                 </div>
                 <div class="panel-container show">
@@ -254,18 +254,6 @@
                                 <div class="invalid-feedback">No, you missed this one.</div>
                                 <div class="help-block">Your username must not contain spaces, or emoji.</div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-12 form-label" for="userpassword">Create Username and Password<span class="text-danger">*</span></label>
-                            <div class="col-md-6 pr-1">
-                                <input type="password" id="userpassword" class="form-control" placeholder="password minimum 8 characters" required>
-                                <div class="invalid-feedback">No, you missed this one.</div>
-                            </div>
-                            <div class="col-md-6 pr-1">
-                                <input type="password" id="passwordconfirm" class="form-control" placeholder="confirm your password" required>
-                                <div class="invalid-feedback">Sorry, you missed this one.</div>
-                            </div>
-                            <div class="col-lg-12 help-block">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</div>
                         </div>
                     </div>
                 </div>

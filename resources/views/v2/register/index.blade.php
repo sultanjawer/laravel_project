@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {{env('APP_NAME')}} | {{ $pagedata['controller'] ?? config('app.name', 'Application') }}
+        Simethris V.2 | {{ $pagedata['controller'] ?? config('app.name', 'Application') }}
     </title>
     <meta name="description" content="Page Title">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -413,23 +413,7 @@
     <script src="{{ asset('js/vendors.bundle.js') }}"></script>
     <script src="{{ asset('js/app.bundle.js') }}"></script>
     <!-- Smartadmin plugin -->
-    <script src="{{ asset('js/datagrid/datatables/datatables.bundle.js') }}"></script>
-    <script src="{{ asset('js/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('js/formplugins/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
-    <script src="{{ asset('js/formplugins/dropzone/dropzone.js') }}"></script>
     <script src="{{ asset('js/formplugins/select2/select2.bundle.js') }}"></script>
-    <script src="{{ asset('js/formplugins/summernote/summernote.js') }}"></script>
-    <!-- Smartadmin misc -->
-    <script src="{{ asset('js/miscellaneous/nestable/nestable.js') }}"></script>
-    <!-- smartadmin statistics -->
-    <script src="{{ asset('js/statistics/c3/c3.js') }}"></script>
-    <script src="{{ asset('js/statistics/chartist/chartist.js') }}"></script>
-    <script src="{{ asset('js/statistics/chartjs/chartjs.bundle.js') }}"></script>
-    <script src="{{ asset('js/statistics/d3/d3.js') }}"></script>
-    <script src="{{ asset('js/statistics/echart/echarts.min.js') }}"></script>
-    <script src="{{ asset('js/statistics/easypiechart/easypiechart.bundle.js') }}"></script>
-    <script src="{{ asset('js/statistics/sparkline/sparkline.bundle.js') }}"></script>
-    <script src="{{ asset('js/statistics/flot/flot.bundle.js') }}"></script>
 
     <!-- intro.js -->
     <script src="{{ asset('js/intro.js/minified/intro.min.js') }}"></script>

@@ -154,18 +154,12 @@
                             <span class="nav-link-text" data-i18n="nav.category">My Profile</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('profile/company') ? 'active' : '' }}">
-                        <a href="/v2/profile/company" title="Company Profile" data-filter-tags="company profile">
-                            <span class="nav-link-text" data-i18n="nav.company_profile">Company Profile</span>
+                    <li>
+                        <a class="{{ request()->is('v2/myprofile/password') ? 'active' : '' }}" href="/v2/myprofile/password" title="Change Password" data-filter-tags="change password">
+                            <span class="nav-link-text" data-i18n="nav.users_management">Change Password</span>
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a class="{{ request()->is('profile/password') ? 'active' : '' }}" href="/profile/password" title="Change Password" data-filter-tags="change password">
-                    <i class="fal fa-key"></i>
-                    <span class="nav-link-text" data-i18n="nav.users_management">Change Password</span>
-                </a>
             </li>
             <li class="nav-title">Navigation Title</li>
             <li>

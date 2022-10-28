@@ -342,11 +342,6 @@
                             <span class="nav-link-text" data-i18n="nav.category">My Profile</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('profile/company') ? 'active' : '' }}">
-                        <a href="#" title="Company Profile" data-filter-tags="company profile">
-                            <span class="nav-link-text" data-i18n="nav.company_profile">Company Profile</span>
-                        </a>
-                    </li>
                     <li>
                         <a href="/profile/password" title="Change Password" data-filter-tags="change password">
                             <span class="nav-link-text" data-i18n="nav.change_password">Change Password</span>

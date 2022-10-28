@@ -14,15 +14,8 @@ class RegisterController extends Controller
     public function indexv2()
     {
         $pagedata = array(
-            'controller' => 'Dashboard',
-            'pagetitles' => 'Page Title',
-            'subtitles' => 'Sub Title',
-            'emphs' => 'Short brief for this page',
-            'alerttitle' => 'Alert/information Title', //make it uppercase
-            'alertcontent' => 'Alert/information should appear in here.',
+            'controller' => 'Registration',
         );
-        $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
-        $breadcrumbs = ['Simethris', 'Module Title', 'Page Title']; //add as much array item as needed
-        return view('v2.register.index', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
+        return view('v2.register.index', compact('pagedata'));
     }
 }

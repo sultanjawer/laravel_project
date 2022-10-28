@@ -250,7 +250,7 @@ Route::get('/v2/messenger/read', [MessengerController::class, 'readv2'])->name('
 //v2 profile
 Route::get('/v2/myprofile', [ProfilesController::class, 'indexv2'])->name('v2.myprofile');
 Route::get('/v2/myprofile/edit/{id}', [ProfilesController::class, 'editv2'])->name('v2.myprofile.edit');
-Route::put('/v2/myprofile/update/{id}', [ProfilesController::class, 'updatev2'])->name('v2.myprofile.update');
+Route::get('/v2/myprofile/password', [ProfilesController::class, 'passwordv2'])->name('v2.myprofile.password');
 
 //v2 documentation how to
 Route::get('/v2/howto', [HowtoController::class, 'indexv2'])->name('v2.howto');

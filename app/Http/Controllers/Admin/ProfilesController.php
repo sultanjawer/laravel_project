@@ -30,6 +30,7 @@ class ProfilesController extends Controller
         return view('admin.profile.index', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
     }
 
+
     public function edit($id)
     {
         $profile = Profiles::find($id);
@@ -48,6 +49,25 @@ class ProfilesController extends Controller
             'My Profile',
         ]; //add as much array item as needed;
         return view('admin.profile.index', compact('pagedata', 'profile'), ['breadcrumb' => $breadcrumbs]);
+    }
+
+    public function password()
+    {
+        $pagedata = array(
+            'controller'    => 'Profiles',
+            'pagetitles'    => 'Password',
+            'subtitles'     => 'Change',
+            'emphs'         => 'Short brief for this page',
+            'alerttitle'    => 'Alert/information Title', //make it uppercase
+            'alertcontent'  => 'Alert/information should appear in here.',
+        );
+        $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
+        $breadcrumbs = [
+            'App Name',
+            'Profile',
+            'Password',
+        ]; //add as much array item as needed;
+        return view('admin.profile.password', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
     }
 
     //v2 starting form this line
@@ -84,5 +104,24 @@ class ProfilesController extends Controller
             'My Profile',
         ]; //add as much array item as needed;
         return view('v2.profile.index', compact('pagedata', 'profile'), ['breadcrumb' => $breadcrumbs]);
+    }
+
+    public function passwordv2()
+    {
+        $pagedata = array(
+            'controller'    => 'Profiles',
+            'pagetitles'    => 'Password',
+            'subtitles'     => 'Change',
+            'emphs'         => 'Short brief for this page',
+            'alerttitle'    => 'Alert/information Title', //make it uppercase
+            'alertcontent'  => 'Alert/information should appear in here.',
+        );
+        $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
+        $breadcrumbs = [
+            'App Name',
+            'Profile',
+            'Password',
+        ]; //add as much array item as needed;
+        return view('v2.profile.password', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
     }
 }
