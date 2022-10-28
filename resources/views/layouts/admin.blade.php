@@ -53,7 +53,7 @@
 		saat tampil di android webview
 	-->
 
-<body class="mod-bg-1 mod-nav-link footer-function-fixed nav-function-minify nav-function-fixed">
+<body class="mod-bg-1 mod-nav-link footer-function-fixed nav-function-minify nav-function-fixed nav-function-top header-function-fixed">
     <!-- BEGIN Page Wrapper -->
     <div class="page-wrapper">
         <div class="page-inner">
@@ -68,10 +68,10 @@
                 <!-- the #js-page-content id is needed for some plugins to initialize -->
                 <main id="js-page-content" role="main" class="page-content">
                     <!-- BEGIN breadcrumb -->
-                    @include('partials.breadcrumb')
+
                     <!-- END Page Content -->
                     <!-- BEGIN subheader -->
-                    @include('partials.subheader')
+
                     <!-- END subheader -->
                     <!-- BEGIN system alert. can be use for flash message or pushed app notification sent by Administrator -->
                     <!-- END system alert  -->
