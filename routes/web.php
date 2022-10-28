@@ -19,6 +19,7 @@ use \App\Http\Controllers\Admin\{
     ProfilesController,
     PullsyncController,
     RegisterController,
+    ReportController,
     SklController,
     VerificationController,
 };
@@ -111,9 +112,7 @@ Route::get('files', [FilesController::class, 'index'])->name('files');
 Route::get('files/myfiles', [FilesController::class, 'myfiles'])->name('files.myfiles');
 Route::get('files/mygalleries', [FilesController::class, 'mygalleries'])->name('files.mygalleries');
 Route::get('files/templates/user', [FilesController::class, 'templates'])->name('files.templates');
-Route::get('files/templates/admin', [FilesController::class, 'templates'])->name('files.templates');
-Route::get('files/templates/admin/create', [FilesController::class, 'create'])->name('files.templates.create');
-Route::get('files/templates/admin/show', [FilesController::class, 'create'])->name('files.templates.edit');
+Route::get('files/templates/admin', [FilesController::class, 'admin_templates'])->name('files.admin_templates');
 
 //v3 feeds
 Route::get('feeds', [FeedsController::class, 'index'])->name('feeds');
@@ -146,6 +145,15 @@ Route::get('verification/skl', [VerificationController::class, 'skl'])->name('ve
 Route::get('verification/skl/check', [VerificationController::class, 'skl_check'])->name('verification.skl.check');
 Route::get('verification/skl/success', [VerificationController::class, 'skl_success'])->name('verification.skl.success');
 Route::get('verification/skl/postponed', [VerificationController::class, 'skl_postponed'])->name('verification.skl.postponed');
+
+//v3 report
+Route::get('report', [report::class, 'index'])->name('report.verification');
+Route::get('report/verification/onfarm', [ReportController::class, 'onfarm'])->name('report.verification.onfarm');
+Route::get('report/verification/online', [ReportController::class, 'online'])->name('report.verification.online');
+Route::get('report/commitment', [ReportController::class, 'commitment'])->name('report.commitment');
+Route::get('report/commitment/detail', [ReportController::class, 'commitment_detail'])->name('report.commitment.detail');
+Route::get('report/commitment/realisasi', [ReportController::class, 'commitment_realisasi'])->name('report.commitment.realisasi');
+Route::get('report/commitment/map', [ReportController::class, 'commitment_peta'])->name('report.commitment.map');
 
 //Assets Management
 Route::get('asset', [AssetController::class, 'index'])->name('asset');

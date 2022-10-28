@@ -70,6 +70,21 @@ class FilesController extends Controller
         return view('admin.files.templates', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
     }
 
+    public function admin_templates()
+    {
+        $pagedata = array(
+            'controller' => 'Files Management',
+            'pagetitles' => 'Master',
+            'subtitles' => 'Template',
+            'emphs' => 'Daftar Contoh Berkas dan Dokumen yang disyaratkan.',
+            'alerttitle' => 'Alert/information Title', //make it uppercase
+            'alertcontent' => 'Alert/information should appear in here.',
+        );
+        $alertcontent = 'Apa yang ingin disampaikan pada halaman ini.';
+        $breadcrumbs = ['Simethris', 'Files', 'Master Template']; //add as much array item as needed
+        return view('admin.files.admin_templates', compact('pagedata'), ['breadcrumb' => $breadcrumbs]);
+    }
+
     //========== v2 starting from this line ==========//
     public function indexv2()
     {

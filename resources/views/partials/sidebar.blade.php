@@ -161,8 +161,6 @@
                     </li>
                 </ul>
             </li>
-
-
             <!-- Feed Messages
                 Q: Siapa yang dapat mengakses menu ini?
                 A: Seluruh Pengguna
@@ -247,29 +245,42 @@
                     <span class="nav-link-text" data-i18n="nav.home">Master Data RIPH</span>
                 </a>
             </li>
-            <li class="{{ request()->is('beranda') ? 'active' : '' }}">
-                <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
-                    <i class="fal fa-home"></i>
-                    <span class="nav-link-text" data-i18n="nav.home">Master Template</span>
+            <li class="{{ request()->is('files/templates/admin') ? 'active' : '' }}">
+                <a href="/files/templates/admin" title="Master Templat" data-filter-tags="create master template">
+                    <i class="fal fa-file-upload"></i>
+                    <span class="nav-link-text" data-i18n="nav.master_template">Master Template</span>
                 </a>
             </li>
-            <li class="{{ request()->is('beranda') ? 'active' : '' }}">
-                <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
-                    <i class="fal fa-home"></i>
-                    <span class="nav-link-text" data-i18n="nav.home">Data Report (with sub folders)</span>
+
+            <li class="{{ request()->is('report*') ? 'active' : '' }}">
+                <a href="javascript:void(0);" title="Data Report" data-filter-tags="data report laporan">
+                    <i class="fal fa-landmark"></i>
+                    <span class="nav-link-text" data-i18n="nav.files">Data Report</span>
                 </a>
-            </li>
-            <li class="{{ request()->is('beranda') ? 'active' : '' }}">
-                <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
-                    <i class="fal fa-home"></i>
-                    <span class="nav-link-text" data-i18n="nav.home">Verification (On progress</span>
-                </a>
-            </li>
-            <li class="{{ request()->is('beranda') ? 'active' : '' }}">
-                <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
-                    <i class="fal fa-home"></i>
-                    <span class="nav-link-text" data-i18n="nav.home">Verification (Accomplished)</span>
-                </a>
+                <ul>
+                    <li class="{{ request()->is('report/commitment') ? 'active' : '' }}">
+                        <a href="/report/commitment" title="Commitmen Lists" data-filter-tags="report laporan commitment lists daftar riph">
+                            <span class="nav-link-text" data-i18n="nav.my_files">Commitmen Lists</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('report/verification*') ? 'active' : '' }}">
+                        <a href="javascript:void(0);" title="Verification Report" data-filter-tags="verification report laporan verifikasi">
+                            <span class="nav-link-text" data-i18n="nav.verification_report">Verification Report</span>
+                        </a>
+                        <ul>
+                            <li class="{{ request()->is('report/verification/onfarm') ? 'active' : '' }}">
+                                <a href="/report/verification/onfarm" title="Onfarm Report" data-filter-tags="laporan report verifikasi verification onfarm lapangan">
+                                    <span class="nav-link-text" data-i18n="nav.onfarm_report">Onfarm Report</span>
+                                </a>
+                            </li>
+                            <li class="{{ request()->is('report/verification/online') ? 'active' : '' }}">
+                                <a href="/report/verification/online" title="Onfarm Report" data-filter-tags="laporan report verifikasi verification online">
+                                    <span class="nav-link-text" data-i18n="nav.online_report">Online Report</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li class="{{ request()->is('verification/skl*') ? 'active' : '' }}">
                 <a href="javascript:void(0);" title="SKL" data-filter-tags="surat keterangan lunas">

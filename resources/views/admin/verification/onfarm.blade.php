@@ -7,12 +7,12 @@
     <div class="col-lg-12">
         <div class="mb-2">
             <ul class="nav nav-pills" role="tablist">
-                <li class="nav-item"><a class="btn-sm nav-link active" data-toggle="pill" href="#que"><i class="fas fa-clock mr-1"></i>Verification Que</a></li>
+                <li class="nav-item"><a class="btn-sm nav-link active" data-toggle="pill" href="#queue"><i class="fas fa-clock mr-1"></i>Verification Queue</a></li>
                 <li class="nav-item"><a class="btn-sm nav-link" data-toggle="pill" href="#verified"><i class="fas fa-check mr-1"></i>Verified</a></li>
             </ul>
         </div>
         <div class="tab-content py-3">
-            <div class="tab-pane fade active show" id="que" role="tabpanel">
+            <div class="tab-pane fade active show" id="queue" role="tabpanel">
                 <div id="panel-1" class="panel">
                     <!-- diakses melalui menu verificator tasks > ONFARM 
 			            yang ingin dicapai adalah:
@@ -21,7 +21,7 @@
                     <div class="panel-container show">
                         <div class="panel-content">
                             <div class="table">
-                                <table id="que_tbl" class="table table-sm table-bordered table-hover table-striped w-100">
+                                <table id="queue_tbl" class="table table-sm table-bordered table-hover table-striped w-100">
                                     <thead class="bg-warning-50">
                                         <tr>
                                             <th id="">No. Pengajuan</th>
@@ -165,8 +165,8 @@
 <script src="{{ asset('/js/datagrid/datatables/datatables.export.js') }}"></script>
 <script>
     $(document).ready(function() {
-        //datatabel que
-        $('#que_tbl').dataTable({
+        //datatabel queue
+        $('#queue_tbl').dataTable({
             processing: true,
             serverside: true,
             pagingType: 'full_numbers',
@@ -242,7 +242,7 @@
             ]
         });
 
-        //datatabel que
+        //datatabel verified
         $('#verified_tbl').dataTable({
             processing: true,
             serverside: true,
