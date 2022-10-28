@@ -4,16 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>
-        Simethris 2021 | Account Registration
+        {{env('APP_NAME')}} | {{ $pagedata['controller'] ?? config('app.name', 'Application') }}
     </title>
-    <meta name="description" content="Login">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
-    <!-- Call App Mode on ios devices -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!-- Remove Tap Highlight on Windows Phone IE -->
-    <meta name="msapplication-tap-highlight" content="no">
-    <!-- base css -->
     <meta name="description" content="Page Title">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
@@ -21,37 +13,49 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- Remove Tap Highlight on Windows Phone IE -->
     <meta name="msapplication-tap-highlight" content="no">
-
     <!-- smartadmin base css -->
     <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/vendors.bundle.css') }}">
     <link id="appbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/app.bundle.css') }}">
-    <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
+    <link id="mytheme" rel="stylesheet" media="screen, print" href="{{ asset('css/theme/cust-theme-5.css') }}">
     <link id="myskin" rel="stylesheet" media="screen, print" href="{{ asset('css/skins/skin-master.css') }}">
-
     <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('css/skins/favicon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon.png') }}">
-    <link rel="mask-icon" href="{{ asset('img/favicon/safari-pinned-tab.svg') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon.png') }}">
+    <link rel="mask-icon" href="{{ asset('img/favicon.png') }}" color="#5bbad5">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/miscellaneous/reactions/reactions.css') }}">
 
-    <!-- Font Awsome -->
-    <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-brands.css') }}">
+    <!-- You can add your own stylesheet here to override any styles that comes before it
+		<link rel="stylesheet" media="screen, print" href="css/your_styles.css">-->
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/datagrid/datatables/datatables.bundle.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/formplugins/bootstrap-datepicker/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/formplugins/dropzone/dropzone.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/formplugins/select2/select2.bundle.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/formplugins/summernote/summernote.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/miscellaneous/nestable/nestable.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/miscellaneous/reactions/reactions.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/skins/skin-master.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/statistics/c3/c3.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/statistics/chartist/chartist.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/statistics/chartjs/chartjs.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-light.css') }}">
     <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-regular.css') }}">
     <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-solid.css') }}">
-
-    <!-- select2 -->
-    <link rel="stylesheet" media="screen, print" href="{{ asset('css/formplugins/select2/select2.bundle.css') }}">
-
-    <!-- Intro.js -->
-    <link rel="stylesheet" media="screen, print" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.css">
-    <link rel="stylesheet" media="screen, print" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.min.css">
-    <link rel="stylesheet" media="screen, print" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/introjs.min.css.map">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/fa-brands.css') }}">
+    <!-- intro.js node_modules\intro.js -->
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/intro.js/introjs.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/intro.js/minified/introjs.min.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('css/intro.js/minified/introjs.min.css.map') }}">
+    @yield('style')
 </head>
-<!-- Apa yang ingin dicapai pada halaman ini
-		
+<!--
+		ditambahkan class fixed footer "footer-function-fixed"
+		pada body class sebagai default layout antisipasi
+		saat tampil di android webview
 	-->
 
-<body>
-    <div class="page-wrapper auth">
+<body class="">
+    <!-- BEGIN Page Wrapper -->
+    <div class="page-wrapper">
         <div class="page-inner bg-brand-gradient">
             <div class="page-content-wrapper bg-transparent m-0">
                 <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
@@ -150,7 +154,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <div id="panel-2" class="panel" data-title="Panel Data" data-intro="Panel ini berisi data-data" data-step="2">
                                                     <div class="panel-hdr">
                                                         <h2>
@@ -258,7 +261,7 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label class="form-label" for="kabupaten">Kabupaten <span class="text-danger">*</span></label>
-                                                                    <select class="select2 select2-kab form-control w-100" id="kabupaten" required>
+                                                                    <select class="select2-kab form-control w-100" id="kabupaten" multiple="multiple" required>
                                                                         <option>Kab. Bandung</option>
                                                                         <option>Kab. Garut</option>
                                                                         <option>Kab. Wonosobo</option>
@@ -270,7 +273,7 @@
                                                             <div class="form-group row">
                                                                 <div class="col-md-6">
                                                                     <label class="form-label" for="kecamatan">Kecamatan <span class="text-danger">*</span></label>
-                                                                    <select class="select2-kec form-control w-100" id="kecamatan" required>
+                                                                    <select class="select2-kec form-control w-100" id="kecamatan" multiple="multiple" required>
                                                                         <option>kec. Bandung</option>
                                                                         <option>kec. Garut</option>
                                                                         <option>kec. Wonosobo</option>
@@ -280,7 +283,7 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label class="form-label" for="desa">Desa <span class="text-danger">*</span></label>
-                                                                    <select class="select2-des form-control w-100" id="desa" required>
+                                                                    <select class="select2-des form-control w-100" id="desa" multiple="multiple" required>
                                                                         <option>Desa Bandung</option>
                                                                         <option>Desa Garut</option>
                                                                         <option>Desa Wonosobo</option>
@@ -377,7 +380,7 @@
                                         </div>
                                         <hr>
                                         <div id="panel-7">
-                                            <div class="form-group demo">
+                                            <div class="form-group">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="terms" required>
                                                     <label class="custom-control-label" for="terms"> Kami menyatakan bahwa data yang kami berikan adalah benar dan dapat dipertanggungjawabkan.</label>
@@ -407,32 +410,82 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/vendors.bundle.js') }}"></script>
+    <script src="{{ asset('js/app.bundle.js') }}"></script>
+    <!-- Smartadmin plugin -->
+    <script src="{{ asset('js/datagrid/datatables/datatables.bundle.js') }}"></script>
+    <script src="{{ asset('js/moment/moment.min.js') }}"></script>
+    <script src="{{ asset('js/formplugins/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('js/formplugins/dropzone/dropzone.js') }}"></script>
+    <script src="{{ asset('js/formplugins/select2/select2.bundle.js') }}"></script>
+    <script src="{{ asset('js/formplugins/summernote/summernote.js') }}"></script>
+    <!-- Smartadmin misc -->
+    <script src="{{ asset('js/miscellaneous/nestable/nestable.js') }}"></script>
+    <!-- smartadmin statistics -->
+    <script src="{{ asset('js/statistics/c3/c3.js') }}"></script>
+    <script src="{{ asset('js/statistics/chartist/chartist.js') }}"></script>
+    <script src="{{ asset('js/statistics/chartjs/chartjs.bundle.js') }}"></script>
+    <script src="{{ asset('js/statistics/d3/d3.js') }}"></script>
+    <script src="{{ asset('js/statistics/echart/echarts.min.js') }}"></script>
+    <script src="{{ asset('js/statistics/easypiechart/easypiechart.bundle.js') }}"></script>
+    <script src="{{ asset('js/statistics/sparkline/sparkline.bundle.js') }}"></script>
+    <script src="{{ asset('js/statistics/flot/flot.bundle.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js.map"></script>
+    <!-- intro.js -->
+    <script src="{{ asset('js/intro.js/minified/intro.min.js') }}"></script>
+    <script src="{{ asset('js/intro.js/intro.js') }}"></script>
+    <script src="{{ asset('js/intro.js/minified/intro.min.js.map') }}"></script>
 
-    <script src="{{ asset('/js/formplugins/select2/select2.bundle.js') }}"></script>
+    <script type="text/javascript">
+        document.getElementById('startTour').onclick = function() {
+            introJs().setOptions({
+                    showStepNumbers: true,
+                    prevLabel: 'Kembali',
+                    nextLabel: 'Lanjut',
+                    doneLabel: 'Selesai',
+                })
+                // untuk menuju ke halaman lain, gunakan ini
+                //.oncomplete(function() {
+                //    window.location.href = '/';
+                //})
+                .onstart(function() {
+                    alert('Mulai Tour! Tour ini akan memberikan panduan singkat penggunaan halaman ini. klik tombol Lanjut untuk melanjutkan');
+                })
+                .oncomplete(function() {
+                    alert('Tour Selesai');
+                })
+                .start()
+        };
+    </script>
+
+    {{-- <script type="text/javascript">
+            /* Activate smart panels */
+            $('#js-page-content').smartPanel();
+			
+        </script> --}}
 
     <script>
         $(document).ready(function() {
             $(function() {
                 $(".select2-prov").select2({
+                    maximumSelectionLength: 1,
                     placeholder: "Select Province"
                 });
                 $(".select2-kab").select2({
+                    maximumSelectionLength: 1,
                     placeholder: "Select Kabupaten"
                 });
                 $(".select2-kec").select2({
+                    maximumSelectionLength: 1,
                     placeholder: "Select Kecamatan"
                 });
                 $(".select2-des").select2({
+                    maximumSelectionLength: 1,
                     placeholder: "Select Desa"
                 });
             });
         });
     </script>
-
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');
@@ -460,6 +513,7 @@
             // Perform ajax submit here...
         });
     </script>
+    @yield('scripts')
 </body>
 
 </html>
