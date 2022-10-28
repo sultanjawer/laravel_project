@@ -55,7 +55,7 @@
 	-->
 
 <body>
-    <div class="page-wrapper auth">
+    <div class="page-wrapper">
         <div class="page-inner bg-brand-gradient">
             <div class="page-content-wrapper bg-transparent m-0">
                 <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
@@ -216,7 +216,7 @@
             </div>
         </div>
     </div>
-
+    @include('partials.pagesettings')
     <script src="{{ asset('js/vendors.bundle.js') }}"></script>
     <script src="{{ asset('js/app.bundle.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js"></script>
@@ -225,8 +225,28 @@
 
 
     <script>
-
+        $(document).ready(function() {
+            $(function() {
+                $(".select2-role").select2({
+                    maximumSelectionLength: 1,
+                    placeholder: "Select Role"
+                });
+                $(".select2-prov").select2({
+                    placeholder: "Select Province"
+                });
+                $(".select2-kab").select2({
+                    placeholder: "Select Kabupaten"
+                });
+                $(".select2-kec").select2({
+                    placeholder: "Select Kecamatan"
+                });
+                $(".select2-des").select2({
+                    placeholder: "Select Desa"
+                });
+            });
+        });
     </script>
+
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');
