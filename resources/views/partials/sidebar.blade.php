@@ -52,7 +52,7 @@
                     <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
                 </a>
             </li>
-            <li class="{{ request()->is('dashboard*') | request()->is('pemetaan*') ? 'active' : '' }}">
+            <li class="{{ request()->is('dashboard*') | request()->is('pemetaan*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="Dashboard" data-filter-tags="dashboard">
                     <i class="fal fa-analytics"></i>
                     <span class="nav-link-text" data-i18n="nav.dashboard">Dashboard</span>
@@ -120,7 +120,7 @@
                     <span class="nav-link-text" data-i18n="nav.home">Pelaporan Komitmen</span>
                 </a>
             </li>
-            <li class="{{ request()->is('pengajuan*') | request()->is('userskl*') ? 'active' : '' }}">
+            <li class="{{ request()->is('pengajuan*') | request()->is('userskl*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="Verifikasi & SKL " data-filter-tags="pengajuan verifikasi skl">
                     <i class="fal fa-ballot-check"></i>
                     <span class="nav-link-text" data-i18n="nav.verifikasi_skl">Verifikasi & SKL</span>
@@ -138,7 +138,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="{{ request()->is('files*') ? 'active' : '' }}">
+            <li class="{{ request()->is('files*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="Pengelolaan Berkas files management" data-filter-tags="Daftar Berkas Dokumen Galeri Foto">
                     <i class="fal fa-folder"></i>
                     <span class="nav-link-text" data-i18n="nav.files">Pengelolaan Berkas</span>
@@ -252,7 +252,7 @@
                 </a>
             </li>
 
-            <li class="{{ request()->is('report*') ? 'active' : '' }}">
+            <li class="{{ request()->is('report*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="Data Report" data-filter-tags="data report laporan">
                     <i class="fal fa-landmark"></i>
                     <span class="nav-link-text" data-i18n="nav.files">Data Report</span>
@@ -263,7 +263,7 @@
                             <span class="nav-link-text" data-i18n="nav.my_files">Commitmen Lists</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('report/verification*') ? 'active' : '' }}">
+                    <li class="{{ request()->is('report/verification*') ? 'active open' : '' }}">
                         <a href="javascript:void(0);" title="Verification Report" data-filter-tags="verification report laporan verifikasi">
                             <span class="nav-link-text" data-i18n="nav.verification_report">Verification Report</span>
                         </a>
@@ -282,7 +282,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="{{ request()->is('verification/skl*') ? 'active' : '' }}">
+            <li class="{{ request()->is('verification/skl*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="SKL" data-filter-tags="surat keterangan lunas">
                     <i class="fal fa-file-certificate"></i>
                     <span class="nav-link-text" data-i18n="nav.skl">SKL</span>
@@ -331,7 +331,7 @@
                     Verifikator     = CRUD
                     User            = CRUD
             -->
-            <li class="{{ request()->is('profile*') ? 'active' : '' }}">
+            <li class="{{ request()->is('profile*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="Profiles" data-filter-tags="Profiles">
                     <i class="fal fa-address-card"></i>
                     <span class="nav-link-text" data-i18n="nav.users_management">Profiles</span>
@@ -342,7 +342,7 @@
                             <span class="nav-link-text" data-i18n="nav.category">My Profile</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ request()->is('profile/password') ? 'active' : '' }}">
                         <a href="/profile/password" title="Change Password" data-filter-tags="change password">
                             <span class="nav-link-text" data-i18n="nav.change_password">Change Password</span>
                         </a>

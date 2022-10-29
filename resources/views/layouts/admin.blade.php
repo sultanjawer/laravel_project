@@ -16,7 +16,7 @@
     <!-- smartadmin base css -->
     <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/vendors.bundle.css') }}">
     <link id="appbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/app.bundle.css') }}">
-    <link id="mytheme" rel="stylesheet" media="screen, print" href="{{ asset('css/theme/cust-theme-5.css') }}">
+    <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
     <link id="myskin" rel="stylesheet" media="screen, print" href="{{ asset('css/skins/skin-master.css') }}">
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon.png') }}">
@@ -53,7 +53,7 @@
 		saat tampil di android webview
 	-->
 
-<body class="mod-bg-1 mod-nav-link footer-function-fixed nav-function-minify nav-function-fixed nav-function-top header-function-fixed">
+<body class="mod-bg-1 mod-nav-link footer-function-fixed nav-function-minify nav-function-top header-function-fixed">
     <!-- BEGIN Page Wrapper -->
     <div class="page-wrapper">
         <div class="page-inner">
