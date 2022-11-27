@@ -23,10 +23,10 @@
             <div class="info-card-text">
                 <a href="#" class="d-flex align-items-center text-white">
                     <span class="text-truncate text-truncate-sm d-inline-block">
-                        {{ Auth::user()->name }}
+                        Administrator
                     </span>
                 </a>
-                <span class="d-inline-block text-truncate text-truncate-sm">{{ Auth::user()->type }}</span>
+                <span class="d-inline-block text-truncate text-truncate-sm">Bogor, Indonesia</span>
             </div>
             <img src="/img/card-backgrounds/cover-2-lg.png" class="cover" alt="cover">
             <a href="#" onclick="return false;" class="pull-trigger-btn" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar" data-focus="nav_filter_input">
@@ -46,43 +46,13 @@
                     Verifikator     = All Feeds & His Messages
                     User            = Feeds for him & His Messages
             -->
-            @if (\Auth::user()->type=='admin')
-            <li class="{{ request()->is('admin/home') ? 'active' : '' }}">
-                <a href="{{route('admin.home')}}" title="Beranda" data-filter-tags="beranda home">
+            <li class="{{ request()->is('beranda') ? 'active' : '' }}">
+                <a href="/beranda" title="Beranda" data-filter-tags="beranda home">
                     <i class="fal fa-home"></i>
                     <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
                 </a>
             </li>
-            @endif
-
-            @if (\Auth::user()->type=='verifikator')
-            <li class="{{ request()->is('*home*') ? 'active' : '' }}">
-                <a href="{{route('verif.home')}}" title="Beranda" data-filter-tags="beranda home">
-                    <i class="fal fa-home"></i>
-                    <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
-                </a>
-            </li>
-            @endif
-
-            @if (\Auth::user()->type=='user')
-            <li class="{{ request()->is('*home*') ? 'active' : '' }}">
-                <a href="{{route('user.home')}}" title="Beranda" data-filter-tags="beranda home">
-                    <i class="fal fa-home"></i>
-                    <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
-                </a>
-            </li>
-            @endif
-
-            @if (\Auth::user()->type=='v2')
-            <li class="{{ request()->is('*home*') ? 'active' : '' }}">
-                <a href="{{route('v2.home')}}" title="Beranda" data-filter-tags="beranda home">
-                    <i class="fal fa-home"></i>
-                    <span class="nav-link-text" data-i18n="nav.home">Beranda</span>
-                </a>
-            </li>
-            @endif
-
-            <li class="{{ request()->is('*dashboard*') ? 'active open' : '' }}">
+            <li class="{{ request()->is('dashboard*') | request()->is('pemetaan*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="Dashboard" data-filter-tags="dashboard">
                     <i class="fal fa-analytics"></i>
                     <span class="nav-link-text" data-i18n="nav.dashboard">Dashboard</span>
@@ -96,54 +66,36 @@
                             Verifikator     = His Data & Maps
                             User            = His Data & Maps
                     -->
-                    @if (\Auth::user()->type=='admin')
-                    <li class="{{ request()->is('admin/dashboard/data') ? 'active' : '' }}">
-                        <a href="{{route('admin.dashboard.data')}}" title="Monitoring Realisasi" data-filter-tags="dashboard data monitoring">
-                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi</span>
+                    <li class="{{ request()->is('dashboard/admin') ? 'active' : '' }}">
+                        <a href="/dashboard/admin" title="Dashboard" data-filter-tags="dashboard">
+                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi (Admin)</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('admin/dashboard/peta') ? 'active' : '' }}">
-                        <a href="{{route('admin.dashboard.peta')}}" title="Peta Realisasi" data-filter-tags="dashboard pemetaan">
-                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Peta Realisasi</span>
+                    <li class="{{ request()->is('dashboard/verifikator') ? 'active' : '' }}">
+                        <a href="/dashboard/verifikator" title="Dashboard" data-filter-tags="dashboard">
+                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Verifikasi (Verifikator)</span>
                         </a>
                     </li>
-                    @endif
-                    @if (\Auth::user()->type=='verifikator')
-                    <li class="{{ request()->is('*dashboard/data*') ? 'active' : '' }}">
-                        <a href="{{route('verif.dashboard.data')}}" title="Monitoring Realisasi" data-filter-tags="dashboard data monitoring">
-                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi</span>
+                    <li class="{{ request()->is('dashboard/user') ? 'active' : '' }}">
+                        <a href="/dashboard/user" title="Dashboard" data-filter-tags="dashboard">
+                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi (User)</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('*dashboard/peta*') ? 'active' : '' }}">
-                        <a href="{{route('verif.dashboard.peta')}}" title="Peta Realisasi" data-filter-tags="dashboard pemetaan">
-                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Peta Realisasi</span>
+                    <li class="{{ request()->is('pemetaan/admin') ? 'active' : '' }}">
+                        <a href="/pemetaan/admin" title="Peta Realisasi" data-filter-tags="dashboard pemetaan">
+                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Peta Realisasi (Admin)</span>
                         </a>
                     </li>
-                    @endif
-                    @if (\Auth::user()->type=='user')
-                    <li class="{{ request()->is('*dashboard/data*') ? 'active' : '' }}">
-                        <a href="{{route('user.dashboard.data')}}" title="Monitoring Realisasi" data-filter-tags="dashboard data monitoring">
-                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi</span>
+                    <li class="{{ request()->is('pemetaan/verifikator') ? 'active' : '' }}">
+                        <a href="/pemetaan/verifikator" title="Peta Verifikasi" data-filter-tags="dashboard pemetaan verifikasi">
+                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Peta Verifikasi (Verifikator)</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('*dashboard/peta*') ? 'active' : '' }}">
-                        <a href="{{route('user.dashboard.peta')}}" title="Peta Realisasi" data-filter-tags="dashboard pemetaan">
-                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Peta Realisasi</span>
+                    <li class="{{ request()->is('pemetaan/user') ? 'active' : '' }}">
+                        <a href="/pemetaan/user" title="Peta Realisasi" data-filter-tags="dashboard pemetaan realisasi">
+                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Peta Realisasi (User)</span>
                         </a>
                     </li>
-                    @endif
-                    @if (\Auth::user()->type=='v2')
-                    <li class="{{ request()->is('*dashboard/data*') ? 'active' : '' }}">
-                        <a href="{{route('v2.dashboard.data')}}" title="Monitoring Realisasi" data-filter-tags="dashboard data monitoring">
-                            <span class="nav-link-text" data-i18n="nav.dashboard">Monitoring Realisasi</span>
-                        </a>
-                    </li>
-                    <li class="{{ request()->is('*dashboard/peta*') ? 'active' : '' }}">
-                        <a href="{{route('v2.dashboard.peta')}}" title="Peta Realisasi" data-filter-tags="dashboard pemetaan">
-                            <span class="nav-link-text" data-i18n="nav.dashboard_pemetaan">Peta Realisasi</span>
-                        </a>
-                    </li>
-                    @endif
                 </ul>
             </li>
 
@@ -155,6 +107,60 @@
                     Verificator     = Restrict
                     User            = CRUD
             -->
+            <li class="nav-title">User Tasks</li>
+            <li class="{{ request()->is('pullsync') ? 'active' : '' }}">
+                <a href="/pullsync" title="Sync Data" data-filter-tags="pull sync riph">
+                    <i class="fal fa-sync-alt"></i>
+                    <span class="nav-link-text" data-i18n="nav.home">Pull/Sync Data RIPH</span>
+                </a>
+            </li>
+            <li class="{{ request()->is('commitment') ? 'active' : '' }}">
+                <a href="/commitment" title="Pelaporan Komitmen" data-filter-tags="commitment riph">
+                    <i class="fal fa-ballot-check"></i>
+                    <span class="nav-link-text" data-i18n="nav.home">Pelaporan Komitmen</span>
+                </a>
+            </li>
+            <li class="{{ request()->is('pengajuan*') | request()->is('userskl*') ? 'active open' : '' }}">
+                <a href="javascript:void(0);" title="Verifikasi & SKL " data-filter-tags="pengajuan verifikasi skl">
+                    <i class="fal fa-ballot-check"></i>
+                    <span class="nav-link-text" data-i18n="nav.verifikasi_skl">Verifikasi & SKL</span>
+                </a>
+                <ul>
+                    <li class="{{ request()->is('pengajuan') ? 'active' : '' }}">
+                        <a href="/pengajuan" title="Daftar Pengajuan" data-filter-tags="pengajuan verifikasi">
+                            <span class="nav-link-text" data-i18n="nav.verifikasi">Daftar Pengajuan</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('userskl') ? 'active' : '' }}">
+                        <a href="/userskl" title="Daftar SKL" data-filter-tags="Daftar SKL">
+                            <span class="nav-link-text" data-i18n="nav.skl">Daftar SKL</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="{{ request()->is('files*') ? 'active open' : '' }}">
+                <a href="javascript:void(0);" title="Pengelolaan Berkas files management" data-filter-tags="Daftar Berkas Dokumen Galeri Foto">
+                    <i class="fal fa-folder"></i>
+                    <span class="nav-link-text" data-i18n="nav.files">Pengelolaan Berkas</span>
+                </a>
+                <ul>
+                    <li class="{{ request()->is('files/myfiles') ? 'active' : '' }}">
+                        <a href="/files/myfiles" title="My Files" data-filter-tags="daftar berkas dokumen">
+                            <span class="nav-link-text" data-i18n="nav.my_files">Berkas Saya</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('files/mygalleries') ? 'active' : '' }}">
+                        <a href="/files/mygalleries" title="Galeri" data-filter-tags="foto unggah">
+                            <span class="nav-link-text" data-i18n="nav.list_skl">Galeri Saya</span>
+                        </a>
+                    </li>
+                    <li class="{{ request()->is('files/templates') ? 'active' : '' }}">
+                        <a href="/files/templates/user" title="Master Templates" data-filter-tags="master templat contoh dokumen berkas">
+                            <span class="nav-link-text" data-i18n="nav.list_skl">Templat Master</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <!-- Feed Messages
                 Q: Siapa yang dapat mengakses menu ini?
                 A: Seluruh Pengguna
@@ -163,43 +169,42 @@
                     Verifikator     = Read All Feeds & His Messages
                     User            = Read Feeds for him & His Messages
             -->
-            @if (\Auth::user()->type=='verifikator')
-            <li class="nav-title">Verifikator tasks</li>
-            <li class="{{ request()->is('*verify/onfarm*') ? 'active' : '' }}">
-                <a href="{{route('verif.onfarm')}}" title="On-farm verification" data-filter-tags="on site verification">
+            <li class="nav-title">Feeds & Messages</li>
+            <li class="{{ request()->is('feeds*') ? 'active' : '' }}">
+                <a href="/feeds" title="Feeds" data-filter-tags="feeds news information">
+                    <i class="fal fa-rss"></i>
+                    <span class="nav-link-text" data-i18n="nav.feeds">Feeds</span>
+                </a>
+            </li>
+            <li class="{{ request()->is('v2/messenger*') ? 'active' : '' }}">
+                <a href="/messenger" title="Messenger" data-filter-tags="messages pesan mail messenger">
+                    <i class="fal fa-mailbox"></i>
+                    <span class="nav-link-text" data-i18n="nav.messenger">Messenger</span>
+                    <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 new</span>
+                </a>
+            </li>
+
+            <!-- Verificator Tasks
+                Q: Siapa yang dapat mengakses menu ini?
+                A: Verificator & Administrator
+                Q: Data apa yang dilihat
+                A:  Administrator   = CRUD/Do All Verification
+                    Verifikator     = CRUD/Do His Verification
+                    User            = Restrict
+            -->
+            <li class="nav-title">Verificator Tasks</li>
+            <li class="">
+                <a href="/verification/onfarm" title="On-farm verification" data-filter-tags="on site verification">
                     <i class="fal fa-map-marker-check"></i>
                     <span class="nav-link-text" data-i18n="nav.on_site_verification">Onfarm</span>
                     <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 request</span>
                 </a>
             </li>
-            <li class="{{ request()->is('*verify/online*') ? 'active' : '' }}">
-                <a href="{{route('verif.online')}}" title="on line verification" data-filter-tags="on line verification">
+            <li class="">
+                <a href="/verification/online" title="on line verification" data-filter-tags="on line verification">
                     <i class="fal fa-ballot-check"></i>
                     <span class="nav-link-text" data-i18n="nav.online_verification">Online</span>
                     <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 request</span>
-                </a>
-            </li>
-            @endif
-
-            @if (\Auth::user()->type=='user')
-            <li class="nav-title">User tasks</li>
-            @endif
-
-            @if (\Auth::user()->type=='v2')
-            <li class="nav-title">User tasks</li>
-            @endif
-            <li class="nav-title">Feeds & Messages</li>
-            <li class="{{ request()->is('feeds*') ? 'active' : '' }}">
-                <a href="{{route('feeds')}}" title="Feeds" data-filter-tags="feeds news information">
-                    <i class="fal fa-rss"></i>
-                    <span class="nav-link-text" data-i18n="nav.feeds">Feeds</span>
-                </a>
-            </li>
-            <li class="{{ request()->is('messenger*') ? 'active' : '' }}">
-                <a href="{{route('messenger')}}" title="Messenger" data-filter-tags="messages pesan mail messenger">
-                    <i class="fal fa-mailbox"></i>
-                    <span class="nav-link-text" data-i18n="nav.messenger">Messenger</span>
-                    <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 new</span>
                 </a>
             </li>
             <!-- Administrator Tasks
@@ -210,67 +215,66 @@
                     Verifikator     = Restrict
                     User            = Restrict
             -->
-            @if (\Auth::user()->type=='admin')
             <li class="nav-title">Administrator Tasks</li>
-            <li class="{{ request()->is('admin/manage*') ? 'active' : '' }}">
+            <li class="{{ request()->is('admin*') ? 'active' : '' }}">
                 <a href="javascript:void(0);" title="Users Management" data-filter-tags="users management">
                     <i class="fal fa-users"></i>
                     <span class="nav-link-text" data-i18n="nav.users_management">Users Management</span>
                 </a>
                 <ul>
-                    <li class="{{ request()->is('admin/manage/permissions') ? 'active' : '' }}">
-                        <a href="{{route('admin.permissions')}}" title="Permissions" data-filter-tags="user permissions">
+                    <li class="{{ request()->is('admin/permissions') ? 'active' : '' }}">
+                        <a href=" admin/permissions" title="Permissions" data-filter-tags="user permissions">
                             <span class="nav-link-text" data-i18n="nav.user_permissions">Permissions</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('admin/manage/roles') ? 'active' : '' }}">
-                        <a href="{{route('admin.roles')}}" title="Roles" data-filter-tags="user roles">
+                    <li class="{{ request()->is('admin/roles') ? 'active' : '' }}">
+                        <a href="admin/roles" title="Roles" data-filter-tags="user roles">
                             <span class="nav-link-text" data-i18n="nav.user_roles">Roles</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('admin/manage/users') ? 'active' : '' }}">
-                        <a href="{{route('admin.users')}}" title="Users" data-filter-tags="user list">
+                    <li class="{{ request()->is('admin/users') ? 'active' : '' }}">
+                        <a href="admin/users" title="Users" data-filter-tags="user list">
                             <span class="nav-link-text" data-i18n="nav.user">Users List</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li class="{{ request()->is('*riph*') ? 'active' : '' }}">
-                <a href="{{route('admin.riph')}}" title="Master Data RIPH" data-filter-tags="master data riph">
+            <li class="{{ request()->is('commitment/master') ? 'active' : '' }}">
+                <a href="/commitment/master" title="Master Data RIPH" data-filter-tags="master data riph">
                     <i class="fab fa-stack-overflow"></i>
                     <span class="nav-link-text" data-i18n="nav.home">Master Data RIPH</span>
                 </a>
             </li>
-            <li class="{{ request()->is('*files*') ? 'active' : '' }}">
-                <a href="{{route('admin.files')}}" title="Master Templat" data-filter-tags="create master template">
+            <li class="{{ request()->is('files/templates/admin') ? 'active' : '' }}">
+                <a href="/files/templates/admin" title="Master Templat" data-filter-tags="create master template">
                     <i class="fal fa-file-upload"></i>
                     <span class="nav-link-text" data-i18n="nav.master_template">Master Template</span>
                 </a>
             </li>
 
-            <li class="{{ request()->is('*report*') ? 'active open' : '' }}">
+            <li class="{{ request()->is('report*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="Data Report" data-filter-tags="data report laporan">
                     <i class="fal fa-landmark"></i>
                     <span class="nav-link-text" data-i18n="nav.files">Data Report</span>
                 </a>
                 <ul>
-                    <li class="{{ request()->is('*report/commitment*') ? 'active' : '' }}">
-                        <a href="{{route('admin.report.commitment')}}" title="Commitmen Lists" data-filter-tags="report laporan commitment lists daftar riph">
+                    <li class="{{ request()->is('report/commitment') ? 'active' : '' }}">
+                        <a href="/report/commitment" title="Commitmen Lists" data-filter-tags="report laporan commitment lists daftar riph">
                             <span class="nav-link-text" data-i18n="nav.my_files">Commitmen Lists</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('*report/verification*') ? 'active open' : '' }}">
+                    <li class="{{ request()->is('report/verification*') ? 'active open' : '' }}">
                         <a href="javascript:void(0);" title="Verification Report" data-filter-tags="verification report laporan verifikasi">
                             <span class="nav-link-text" data-i18n="nav.verification_report">Verification Report</span>
                         </a>
                         <ul>
-                            <li class="{{ request()->is('*onfarm*') ? 'active' : '' }}">
-                                <a href="{{route('admin.report.verification.onfarm')}}" title="Onfarm Report" data-filter-tags="laporan report verifikasi verification onfarm lapangan">
+                            <li class="{{ request()->is('report/verification/onfarm') ? 'active' : '' }}">
+                                <a href="/report/verification/onfarm" title="Onfarm Report" data-filter-tags="laporan report verifikasi verification onfarm lapangan">
                                     <span class="nav-link-text" data-i18n="nav.onfarm_report">Onfarm Report</span>
                                 </a>
                             </li>
-                            <li class="{{ request()->is('*online*') ? 'active' : '' }}">
-                                <a href="{{route('admin.report.verification.online')}}" title="Onfarm Report" data-filter-tags="laporan report verifikasi verification online">
+                            <li class="{{ request()->is('report/verification/online') ? 'active' : '' }}">
+                                <a href="/report/verification/online" title="Onfarm Report" data-filter-tags="laporan report verifikasi verification online">
                                     <span class="nav-link-text" data-i18n="nav.online_report">Online Report</span>
                                 </a>
                             </li>
@@ -278,26 +282,25 @@
                     </li>
                 </ul>
             </li>
-            <li class="{{ request()->is('*admin/skl*') ? 'active open' : '' }}">
+            <li class="{{ request()->is('verification/skl*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" title="SKL" data-filter-tags="surat keterangan lunas">
                     <i class="fal fa-file-certificate"></i>
                     <span class="nav-link-text" data-i18n="nav.skl">SKL</span>
                 </a>
                 <ul>
-                    <li class="{{ request()->is('admin/skl') ? 'active' : '' }}">
-                        <a href="{{route('admin.sklindex')}}" title="on line verification" data-filter-tags="on line verification">
-                            <span class="nav-link-text" data-i18n="nav.admin_skl_list">SKL</span>
+                    <li class="{{ request()->is('verification/skl') ? 'active' : '' }}">
+                        <a href="/verification/skl" title="on line verification" data-filter-tags="on line verification">
+                            <span class="nav-link-text" data-i18n="nav.online_verification">SKL</span>
                             <span class="dl-ref bg-primary-500 hidden-nav-function-minify hidden-nav-function-top">197 request</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('*skl/create') ? 'active' : '' }}">
-                        <a href="{{route('admin.skl.create')}}" title="SKL Issued" data-filter-tags="penerbitan skl surat keterangan lunas">
+                    <li class="{{ request()->is('skl/create') ? 'active' : '' }}">
+                        <a href="/skl/create" title="SKL Issued" data-filter-tags="penerbitan skl surat keterangan lunas">
                             <span class="nav-link-text" data-i18n="nav.skl_create">Create SKL</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            @endif
             <!-- Documentation
                 Q: Siapa yang dapat mengakses menu ini?
                 A: Administrator
@@ -334,13 +337,13 @@
                     <span class="nav-link-text" data-i18n="nav.users_management">Profiles</span>
                 </a>
                 <ul>
-                    <li class="{{ request()->is('*myprofile*') ? 'active' : '' }}">
-                        <a href="{{route('myprofile')}}" title="My Profile" data-filter-tags="my profile">
+                    <li class="{{ request()->is('profile/edit*') ? 'active' : '' }}">
+                        <a href="/profile/edit/1" title="My Profile" data-filter-tags="my profile">
                             <span class="nav-link-text" data-i18n="nav.category">My Profile</span>
                         </a>
                     </li>
-                    <li class="{{ request()->is('*password') ? 'active' : '' }}">
-                        <a href="{{route('password')}}" title="Change Password" data-filter-tags="change password">
+                    <li class="{{ request()->is('profile/password') ? 'active' : '' }}">
+                        <a href="/profile/password" title="Change Password" data-filter-tags="change password">
                             <span class="nav-link-text" data-i18n="nav.change_password">Change Password</span>
                         </a>
                     </li>

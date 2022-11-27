@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.global')
 @section ('style')
 @endsection
 @section('content')
@@ -51,7 +51,7 @@
                                     </td>
                                     <!-- khusus status lunas, icon tertaut dengan Surat Keterangan Lunas DIgital -->
                                     <td class="text-center">
-                                        <a title="HORE! SUDAH LUNAS" class="text-success" href="{{route('admin.skl.form')}}">
+                                        <a title="HORE! SUDAH LUNAS" class="text-success" href="/userskl/formskl">
                                             <i class="fas fa-award "></i>
                                         </a>
                                     </td>

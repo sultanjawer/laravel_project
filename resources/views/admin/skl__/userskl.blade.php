@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.global')
 @section ('style')
 @endsection
 @section('content')
@@ -7,14 +7,9 @@
 <div class="row">
     <div class="col-lg-12">
         <div id="panel-1" class="panel">
-            <div class="panel-hdr">
-                <h2>Daftar SKL (New Version)</h2>
-                <div class="panel-toolbar"></div>
-            </div>
             <div class="panel-container show">
                 <div class="panel-content">
-                    <span class="help-block">Daftar SKL di bawah in diambil dari data SKL yang dibuat oleh Administrator pada system versi terbaru.</span>
-                    <div class="table mt-5">
+                    <div class="table">
                         <table id="verifList" class="table table-sm table-bordered table-hover table-striped w-100">
                             <thead class="thead-dark">
                                 <tr>
@@ -51,7 +46,7 @@
                                     </td>
                                     <!-- khusus status lunas, icon tertaut dengan Surat Keterangan Lunas DIgital -->
                                     <td class="text-center">
-                                        <a title="HORE! SUDAH LUNAS" class="text-success" href="{{route('admin.skl.form')}}">
+                                        <a title="HORE! SUDAH LUNAS" class="text-success" href="/userskl/formskl">
                                             <i class="fas fa-award "></i>
                                         </a>
                                     </td>
@@ -59,17 +54,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id="panel-1" class="panel">
-            <div class="panel-hdr">
-                <h2>Daftar SKL (backdate)</h2>
-                <div class="panel-toolbar"></div>
-            </div>
-            <div class="panel-container show">
-                <div class="panel-content">
-                    <span class="help-block">Daftar SKL di bawah ini diambil dari data SKL yang dibuat oleh Administrator secara manual.</span>
                 </div>
             </div>
         </div>

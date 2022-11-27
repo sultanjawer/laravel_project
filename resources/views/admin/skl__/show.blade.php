@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.global')
 @section ('style')
 <!-- select2 -->
 <link rel="stylesheet" media="screen, print" href="{{ asset('css/formplugins/select2/select2.bundle.css') }}">
